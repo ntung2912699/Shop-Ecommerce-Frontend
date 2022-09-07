@@ -1,0 +1,6 @@
+.products-spinner{
+    z-index: 100;
+    top: -50%;
+    position: relative;
+    left: 50%;
+}

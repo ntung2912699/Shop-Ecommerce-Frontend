@@ -1,0 +1,6 @@
+.detail-spinner{
+    z-index: 100;
+    top: 50%;
+    position: absolute;
+    left: 45%;
+}

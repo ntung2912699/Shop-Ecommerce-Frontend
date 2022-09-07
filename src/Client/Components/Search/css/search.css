@@ -1,0 +1,12 @@
+.modal-result{
+    display: none;
+    background-color: #FFFF;
+    min-height: 100px;
+}
+.search-spinner{
+    display: none;
+    z-index: 100;
+    top: 20px;
+    position: absolute;
+    left: 45%;
+}
