@@ -38,7 +38,7 @@ export default function DetailPage(){
             )
         }
       } else{
-        return <div class="spinner-border text-danger detail-spinner" id="detail-loader" role="status">
+        return <div class="spinner-border detail-spinner" id="detail-loader" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     }

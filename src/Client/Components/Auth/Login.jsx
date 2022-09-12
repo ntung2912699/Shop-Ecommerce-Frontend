@@ -43,7 +43,8 @@ export default function LoginClient() {
       }
     }
   
-    async function loginHandler() {
+    async function loginHandler(event){
+      event.preventDefault();
       let validate = validateHandler();
       if(validate === true){
         let email = document.getElementById('emailInput').value
@@ -88,12 +89,12 @@ export default function LoginClient() {
                 <div className="card border-0 shadow rounded-3 my-5">
                   <div className="card-body p-4 p-sm-5">
                     <h2 className="card-title text-center mb-5 fw-light fs-5">Đăng Nhập</h2>
-                    <form >
-                        <div class="spinner-border text-danger auth-spinner" id="login-loader" role="status">
+                    <form onSubmit={loginHandler}>
+                        <div class="spinner-border auth-spinner" id="login-loader" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                       <div className="form-floating mb-3">
-                        <input type="email" className="form-control" id='emailInput' placeholder="name@example.com"/>
+                        <input type="text" className="form-control" id='emailInput' placeholder="name@example.com"/>
                         <label htmlFor="emailInput">Email address</label>
                         <small id='email_message' className='message_validate' style={{color: 'red'}}></small>
                       </div>
@@ -110,7 +111,7 @@ export default function LoginClient() {
                         </label>
                       </div>
                       <div className="d-grid">
-                        <button className="btn btn-primary btn-login text-uppercase fw-bold" type="button" onClick={loginHandler}>Đăng Nhập</button>
+                        <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng Nhập</button>
                       </div>
                       <hr className="my-4"/>
                       <div className="d-grid mb-2">

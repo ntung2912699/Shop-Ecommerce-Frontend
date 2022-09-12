@@ -24,45 +24,45 @@ function CheckoutBox(props){
     return (
         <div class="col-md-4">
             <div class="shadow p-3 mb-5 bg-body rounded">
-            <div class="card mb-4">
-            <div class="card-header py-3">
-                <h5 class="mb-0">Tạm Tính Tiền</h5>
-            </div>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                <li
-                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                    Tạm Tính :
-                    <span style={{color: '#d00031'}}><FormatPrice price={total.toFixed(2)}/></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center px-0 row">
-                    <div className="col-4"> <label htmlFor="shiping">Vận Chuyển :</label></div>
-                    <div class='col-8'>
-                        <select id='shiping' name="" class="form-select" aria-label="Default select example" onChange={Shiping}>
-                            {
-                                props.ship.success.map((e , index) => {
-                                    return <>
-                                    <option key={index} value={e.id} data-price-ship={e.postage} data-name={e.name}><b style={{color: '#d00031'}} >{e.name} - <FormatPrice price={e.postage}/></b></option>
-                                    </>
-                                    })
-                            }
-                        </select>
-                    </div>
-                </li>
-                <li
-                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                    <div>
-                    <strong>Total amount</strong>
-                    <strong>
-                        <p class="mb-0">(including VAT)</p>
-                    </strong>
-                    </div>
-                    <span><strong style={{color: '#d00031'}}><FormatPrice price={grandtotal.toFixed(2)}/></strong></span>
-                </li>
-                </ul>
-                <CheckOutButton total={grandtotal.toFixed(2)} products={props.products} ship={idship} shipName={method} ></CheckOutButton>
-            </div>
-            </div>
+                <div class="card mb-4">
+                <div class="card-header py-3">
+                    <h5 class="mb-0">Tạm Tính Tiền</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                    <li
+                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        Tạm Tính :
+                        <span style={{color: '#dc3545'}}><FormatPrice price={total.toFixed(2)}/></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 row">
+                        <div className="col-4"> <label htmlFor="shiping">Vận Chuyển :</label></div>
+                        <div class='col-8'>
+                            <select id='shiping' name="" class="form-select" aria-label="Default select example" onChange={Shiping}>
+                                {
+                                    props.ship.success.map((e , index) => {
+                                        return <>
+                                        <option key={index} value={e.id} data-price-ship={e.postage} data-name={e.name}><b style={{color: '#d00031'}} >{e.name} - <FormatPrice price={e.postage}/></b></option>
+                                        </>
+                                        })
+                                }
+                            </select>
+                        </div>
+                    </li>
+                    <li
+                        class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                        <div>
+                        <strong>Total amount</strong>
+                        <strong>
+                            <p class="mb-0">(including VAT)</p>
+                        </strong>
+                        </div>
+                        <span><strong style={{color: '#dc3545'}}><FormatPrice price={grandtotal.toFixed(2)}/></strong></span>
+                    </li>
+                    </ul>
+                    <CheckOutButton total={grandtotal.toFixed(2)} products={props.products} ship={idship} shipName={method} ></CheckOutButton>
+                </div>
+                </div>
             </div>
         </div>
     )

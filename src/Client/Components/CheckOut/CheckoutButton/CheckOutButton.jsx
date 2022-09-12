@@ -18,7 +18,7 @@ class CheckOutButton extends React.Component{
         // }
         return(
             <div class="d-grid gap-2">
-                <button class="btn btn-danger" onClick={this.pushDataSession} type="button">
+                <button class="btn btn-dark" onClick={this.pushDataSession} type="button">
                     <Link style={{color: 'white'}} to={`/check-out`}>Tiến Hành Thanh Toán</Link>
                 </button>
             </div>

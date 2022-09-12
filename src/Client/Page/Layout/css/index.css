@@ -622,36 +622,36 @@ progress {
   height: auto;
 }
 
-.card-header {
+/* .card-header {
   background-color: rgba(239, 8, 70, 0.03) !important;
   border-bottom: 1px solid rgba(234, 2, 71, 0.125) !important;
-}
+} */
 
 .btn-user:hover{
-  color: #d00031 !important; 
+  color: #6c757d !important; 
 }
 
 .form-check-input:checked{
-  border-color: #d00031 !important;
-  background-color: #d00031 !important;
-  box-shadow: 0px 1px 1px rgba(176, 1, 45, 0.075) inset, 0px 0px 8px rgba(224, 2, 54, 0.5) !important; 
+  border-color: #6c757d !important;
+  background-color: #6c757d !important;
+  box-shadow: 0px 1px 1px rgba(176, 1, 45, 0.075) inset, 0px 0px 8px rgba(76, 76, 76, 0.5) !important; 
 }
 .accordion-button{
     color: #1b1b1b !important;
-    border-color: #d00031 !important;
+    border-color: #6c757d !important;
     background-color: #fff !important;
 }
 .form-select:focus{
-  border-color: #d00031 !important;
-  box-shadow: 0px 1px 1px rgba(176, 1, 45, 0.075) inset, 0px 0px 8px rgba(224, 2, 54, 0.5) !important; 
+  border-color: #6c757d!important;
+  box-shadow: 0px 1px 1px rgba(176, 1, 45, 0.075) inset, 0px 0px 8px rgba(86, 86, 86, 0.5) !important; 
 }
 .accordion-button:focus{
-  border-color: #d00031 !important;
-  box-shadow: 0px 1px 1px rgba(176, 1, 45, 0.075) inset, 0px 0px 8px rgba(224, 2, 54, 0.5) !important; 
+  border-color: #6c757d !important;
+  box-shadow: 0px 1px 1px rgba(176, 1, 45, 0.075) inset, 0px 0px 8px rgba(72, 72, 72, 0.5) !important; 
 }
 
 .form-control:focus {
-  border-color: #d00031 !important;
+  border-color: #6c757d !important;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(47, 47, 47, 0.5) !important; 
 } 
 
@@ -2696,11 +2696,24 @@ textarea.form-control-lg {
 
   .modal-result{
     position: absolute;
-    width: 150% !important;
+    width: 100% !important;
     z-index: 10;
     top: 3rem !important;
-    left: -31%;
+    left: 0;
   }
+
+  .user-item{
+    position: absolute !important;
+    z-index: 10 !important;
+    top: 0.5rem !important;
+    left: 75% !important;
+  }
+
+  .form-inline{
+    width: 100% !important;
+    margin-top: 0px !important;
+  }
+
   .small-header{
     float: left !important;
     width: 50%;

@@ -22,7 +22,7 @@ class FetchRelatedProducts extends React.Component{
         return(
             <section className="container">
                 <div class="shadow p-3 mb-5 bg-body rounded row">
-                    <h4 style={{borderBottom : '1px solid #d00031', marginBottom : '1.5rem'}}>Các Sản Phẩm Liên Quan</h4>
+                    <h4 style={{borderBottom : '1px solid', marginBottom : '1.5rem'}}>Các Sản Phẩm Liên Quan</h4>
                     <div class="row row-cols-2 row-cols-md-5 g-4">
                         {
                             <RelatedProducts products={this.state.products}/>

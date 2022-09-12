@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Logout extends React.Component{
     async LogoutHandler(){
@@ -27,8 +28,10 @@ class Logout extends React.Component{
         }
     render(){
         return (
-            <a href='#' onClick={this.LogoutHandler}><small style={{color : 'white'}}><i className="fas fa-sign-out-alt fa-fw"></i>Thoát</small></a>
-            );
+            <li>
+                <a className="dropdown-item" onClick={this.LogoutHandler} href="#">Logout</a>
+            </li>
+            )
     }
 }
 export default Logout;

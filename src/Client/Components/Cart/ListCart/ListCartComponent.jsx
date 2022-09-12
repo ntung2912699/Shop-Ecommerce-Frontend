@@ -24,10 +24,10 @@ function ListCart(props){
                               total += element.price*element.quantity
                             }
                             return <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded row">
-                            <div class="d-flex flex-row col-12 col-md-8"><img class="rounded" src={element.product.thumbnail} width="100" height="100"/>
+                            <div class="d-flex flex-row col-12 col-md-8"><img style={{marginRight : '1rem'}} class="rounded" src={element.product.thumbnail} width="100" height="100"/>
                                 <div class="md-12">
                                 <Link to={`/detail-product/${element.product.id}`}>
-                                  <span class="font-weight-bold d-block">{element.product.name}
+                                  <span class="font-weight-bold d-block d-inline-block text-truncate"  style={{maxWidth : '200px'}}>{element.product.name}
                                   </span>
                                   </Link>
                                   {
@@ -85,7 +85,7 @@ export default function ListCartComponent(){
         )
       }else{
         return(
-            <div class="spinner-border text-danger cart-spinner" id="cart-loader" role="status">
+            <div class="spinner-border cart-spinner" id="cart-loader" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
             )

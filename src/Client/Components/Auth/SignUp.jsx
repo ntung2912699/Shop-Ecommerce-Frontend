@@ -59,7 +59,8 @@ export default function Signup() {
     return false;
   }
 
-  function signInHandler() {
+  function signInHandler(event) {
+    event.preventDefault();
     let validate = validateHandler();
 
     if(validate === true){
@@ -100,8 +101,8 @@ export default function Signup() {
           <div className="card border-0 shadow rounded-3 my-5">
             <div className="card-body p-4 p-sm-5">
               <h2 className="card-title text-center mb-5 fw-light fs-5">Đăng Ký Tài Khoản</h2>
-              <form>
-                <div class="spinner-border text-danger auth-spinner" id="login-loader" role="status">
+              <form onSubmit={signInHandler}>
+                <div class="spinner-border auth-spinner" id="login-loader" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
                 <small id='message_fail' style={{color: 'red'}}></small>
@@ -111,7 +112,7 @@ export default function Signup() {
                   <small id='name_message' className='message_validate' style={{color: 'red'}}></small>
                 </div>
                 <div className="form-floating mb-3">
-                  <input type="email" className="form-control" id='emailInput' placeholder="name@example.com"/>
+                  <input type="text" className="form-control" id='emailInput' placeholder="name@example.com"/>
                   <label htmlFor="emailInput">Email</label>
                   <small id='email_message' className='message_validate' style={{color: 'red'}}></small>
                 </div>
@@ -126,7 +127,7 @@ export default function Signup() {
                   <small id='password_confirm_message' className='message_validate' style={{color: 'red'}}></small>
                 </div>
                 <div className="d-grid">
-                  <button className="btn btn-primary btn-login text-uppercase fw-bold" type='button' onClick={signInHandler}>Đăng Ký</button>
+                  <button className="btn btn-primary btn-login text-uppercase fw-bold" type='submit'>Đăng Ký</button>
                 </div>
                 <hr className="my-4"/>
                 <div className="d-grid mb-2">

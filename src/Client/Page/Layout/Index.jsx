@@ -4,12 +4,13 @@ import Navabar from "./Navabar";
 import Footer from "./Footer";
 import './css/index.css';
 
+
 class Index extends React.Component{
     render(){
         return(
             <main>
                 <Navabar/>
-                    <div style={{minHeight: '100vh', paddingTop :'5.5rem'}}>
+                    <div style={{minHeight: '50vh', paddingTop :'2.5rem', paddingBottom : '1rem'}}>
                     <Outlet />    
                     </div>
                 <Footer/>

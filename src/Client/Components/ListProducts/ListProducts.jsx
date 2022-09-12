@@ -3,6 +3,13 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import FormatPrice from "../FormatData/FormatPrice";
 import './css/style.css';
+import {
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardText,
+  MDBCol
+} from 'mdb-react-ui-kit';
 
 class ListProducts extends Component{
     constructor(props) {
@@ -14,38 +21,30 @@ class ListProducts extends Component{
           return (
             <>
               { this.props.products.list_products.map(product => 
-                  <div class="col">
-                    <div class="card h-100 text-center">
-                    <div className="cart-thumbnail" style={{paddingTop: '0.5rem'}}>
-                    <img src={product.thumbnail} class="card-img-top" alt="..."/>
-                    </div>
-                    <div class="card-body">
-                    <Link to={`/detail-product/${product.id}`}>
-                        <b class="card-title">{product.name}</b>
-                        </Link>
-                        <div className="d-flex justify-content-center small text-warning mb-2">
-                              <div className="fa fa-star"></div>
-                              <div className="fa fa-star"></div>
-                              <div className="fa fa-star"></div>
-                              <div className="fa fa-star"></div>
-                              <div className="fa fa-star"></div>
-                          </div>
-                        <b style={{color: '#d00031'}}><FormatPrice price={product.price} /></b>
-                    </div>
-                    {/* <div class="card-footer bg-dange">
-                        <Link to={`/detail-product/${product.id}`}>
-                        <small class="text-muted"><i class="fa fa-eye" aria-hidden="true"></i> Xem Sản Phẩm</small>
-                        </Link>
-                    </div> */}
-                    </div>
-                </div>
+                <MDBCol className="col-6 col-md-3">
+                  <Link to={`/detail-product/${product.id}`}>
+                  <MDBCard className='h-100'>
+                    <MDBCardImage
+                      src={product.thumbnail}
+                      alt='...'
+                      position='top'
+                    />
+                    <MDBCardBody>
+                      <MDBCardText style={{maxWidth : '150px'}} className="d-inline-block text-truncate">{product.name}</MDBCardText>
+                      <MDBCardText style={{color : '#dc3545'}}>
+                        <FormatPrice price={product.price} />
+                      </MDBCardText>
+                    </MDBCardBody>
+                  </MDBCard>
+                  </Link>
+                </MDBCol>
               )}
             </>
           )
         }
         else{
           return(
-            <div class="spinner-border text-danger products-spinner" id="products-loader" role="status">
+            <div class="spinner-border products-spinner" id="products-loader" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
           )

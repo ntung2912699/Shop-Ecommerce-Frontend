@@ -24,7 +24,7 @@ class ProductsInfomation extends React.Component{
                     <div className="col-md-6">
                         <h1 className="display-5 fw-bolder">{this.props.info.productDetail.products.name}</h1>
                         <div className="fs-5 mb-5">
-                            <div className="small mb-1" style={{color: '#d00031'}}>{this.props.info.productDetail.products.status}</div>
+                            <div className="small mb-1">{this.props.info.productDetail.products.status}</div>
                             <div className="justify-content-center small text-warning mb-2">
                                 <div className="fa fa-star"></div>
                                 <div className="fa fa-star"></div>
@@ -35,9 +35,9 @@ class ProductsInfomation extends React.Component{
                         </div>
                         <div className="fs-5 mb-5">
                             {/* <span className="text-decoration-line-through">{pro.price}VND</span> */}
-                            <h3 style={{color: '#d00031'}}><FormatPrice price={parseFloat(this.state.price) + parseFloat(this.state.price_attribute)} /></h3>
-                            <small>Thương hiệu : <b style={{color: '#d00031'}}>{this.props.info.productDetail.products.brand.name}</b></small><br/>
-                            <small><b style={{color: '#d00031'}}>{this.props.info.productDetail.products.quantity} </b>Sản Phẩm Có Sẵn</small>
+                            <h3 style={{color : '#dc3545'}}><FormatPrice price={parseFloat(this.state.price) + parseFloat(this.state.price_attribute)} /></h3>
+                            <small>Thương hiệu : <b>{this.props.info.productDetail.products.brand.name}</b></small><br/>
+                            <small><b>{this.props.info.productDetail.products.quantity} </b>Sản Phẩm Có Sẵn</small>
                         </div>
                         <div className="fs-5 mb-5">
                             <form id="form-attribute">
@@ -62,7 +62,7 @@ class ProductsInfomation extends React.Component{
                         </div>
                         <div className="d-flex">
                             <div className="input-group-btn">
-                                <button className="btn btn-danger btn-minus" onClick={
+                                <button className="btn btn-dark btn-minus" onClick={
                                     function minusClick(){
                                         let val = document.getElementById('qty').value
                                         if(val <= 1){
@@ -77,7 +77,7 @@ class ProductsInfomation extends React.Component{
                             </div>
                             <input className="form-control text-center" id="qty" type="num" value="1" style={{maxWidth:" 4rem"}} />
                             <div className="input-group-btn">
-                                <button className="btn btn-danger btn-plus me-3" onClick={
+                                <button className="btn btn-dark btn-plus me-3" onClick={
                                     function plusClick(){
                                         document.getElementById("qty").value++;
                                     }

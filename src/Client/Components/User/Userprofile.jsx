@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Logout from "../Auth/Logout";
+import { Link } from "react-router-dom";
 
 class UserProfile extends React.Component{
     constructor(props) {
@@ -37,14 +38,48 @@ class UserProfile extends React.Component{
     render(){
         if(this.state.profile.name){
             return(
-                <div className='small-header col-6' style={{padding: '6px 9px 0px 0px', textAlign : 'right'}}>
-                    <a><small><i class="fa fa-user" aria-hidden="true"></i> {this.state.profile.name}</small> </a> | <Logout/>
+                <div class="d-flex align-items-center user-item">
+                    <Link class="text-reset me-3" to={`/cart`}>
+                        <i class="fas fa-shopping-cart"></i>
+                    </Link>
+                    <div class="dropdown">
+                        <a
+                        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                        href="#"
+                        id="navbarDropdownMenuAvatar"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        >
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                            class="rounded-circle"
+                            height="25"
+                            alt="Black and White Portrait of a Man"
+                            loading="lazy"
+                        />
+                        </a>
+                        <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownMenuAvatar"
+                        >
+                        <li>
+                            <a class="dropdown-item d-inline-block text-truncate" style={{maxWidth : '200px'}} href="#">{this.state.profile.name}</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                        </li>
+                            <Logout/>
+                        </ul>
+                    </div>
                 </div>
             )
         }else{
            return (
-            <div className='small-header col-md-6 col-xs-6 col-sm-6' style={{padding: '6px 9px 0px 0px', textAlign : 'right'}}>
-                <a href="/login"><small style={{color : 'white'}}><i class="fa fa-sign-in" aria-hidden="true"></i> Đăng Nhập</small></a> | <a href="/login"><small style={{color : 'white'}}><i class="fa fa-user-plus" aria-hidden="true"></i> Đăng Kí</small></a>
+            <div class="d-flex align-items-center user-item">
+                <Link to={'/login'}>
+                    <small style={{color : '#6c757d'}}><i class="fa fa-sign-in" aria-hidden="true"></i> Đăng Nhập</small>
+                </Link>
             </div>
            )
         }

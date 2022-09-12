@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import { MDBBtn } from 'mdb-react-ui-kit';
 
 export default function Addtocart(props){
 
@@ -54,10 +55,10 @@ export default function Addtocart(props){
       }
     return(
         <>
-            <button className="btn btn-danger flex-shrink-0" type="button" id="cart_btn" onClick={AddToCartHandle}>
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Thêm Vào Giỏ Hàng
-            </button>
-            <div class="spinner-border text-danger" role="status" id='loader-icon' style={{display : 'none'}}>
+            <MDBBtn rounded className='mx-2' style={{color: 'white'}} color='dark' id="cart_btn" onClick={AddToCartHandle}>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Thêm Vào Giỏ
+            </MDBBtn>
+            <div class="spinner-border" role="status" id='loader-icon' style={{display : 'none', position : 'absolute', left: '60%'}}>
                 <span class="visually-hidden">Loading...</span>
             </div>
         </>

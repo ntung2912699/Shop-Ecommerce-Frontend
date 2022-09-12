@@ -8,6 +8,7 @@ import HomePage from './Client/Components/Home/Index';
 import DetailPage from './Client/Components/Detail/Index';
 import CartPage from './Client/Components/Cart/CartPage';
 import CheckOutPage from './Client/Components/CheckOut/CheckoutPage/CheckOutPage';
+import ResultPage from './Client/Components/Search/ResultPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/detail-product/:id" element={<DetailPage />}/>
         <Route path="/cart" element={<CartPage />} />
         <Route path="/check-out" element={<CheckOutPage />} />
+        <Route path="/search/:key" element={<ResultPage />} />
         {/* <Route path="/" element={<HomePage />} />
         <Route path='/error' element={<PageNotFound />}/>
         <Route path="/login" element={<LoginClient />} />
