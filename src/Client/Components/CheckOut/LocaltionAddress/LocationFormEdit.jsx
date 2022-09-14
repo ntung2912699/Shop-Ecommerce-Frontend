@@ -2,7 +2,7 @@ import React from "react";
 import useLocationForm from "./useLocationForm";
 import Select from "react-select";
 
-function LocationForm(props) {
+function LocationFormEdit(props) {
   const {
     state,
     onCitySelect,
@@ -29,42 +29,39 @@ function LocationForm(props) {
                 <div class="row">
                     <div className="col-md-4" style={{paddingTop : '1rem'}}>
                         <Select
-                        id="city"
                         name="cityId"
                         key={`cityId_${selectedCity?.value}`}
                         isDisabled={cityOptions.length === 0}
                         options={cityOptions}
                         onChange={(option) => onCitySelect(option)}
-                        placeholder="Tỉnh/Thành"
+                        placeholder={props.address.city}
                         defaultValue={selectedCity}
                         />
                     </div>
                     <div className="col-md-4" style={{paddingTop : '1rem'}}>
                         <Select
-                        id="district"
                         name="districtId"
                         key={`districtId_${selectedDistrict?.value}`}
                         isDisabled={districtOptions.length === 0}
                         options={districtOptions}
                         onChange={(option) => onDistrictSelect(option)}
-                        placeholder="Quận/Huyện"
+                        placeholder={props.address.district}
                         defaultValue={selectedDistrict}
                         />
                     </div>
                     <div className="col-md-4" style={{paddingTop : '1rem'}}>
                         <Select
-                        id="wards"
                         name="wardId"
                         key={`wardId_${selectedWard?.value}`}
                         isDisabled={wardOptions.length === 0}
                         options={wardOptions}
-                        placeholder="Phường/Xã"
+                        placeholder={props.address.wards}
                         onChange={(option) => onWardSelect(option)}
                         defaultValue={selectedWard}
                         />
                     </div>
                     <div className="col-12" style={{paddingTop : '1rem'}}>
-                        <input type="text" class="form-control" id="address"  placeholder="địa chỉ cụ thể (số nhà, thôn xóm)" />
+                        <input type="text" class="form-control" defaultValue={props.address.address} placeholder="địa chỉ cụ thể (số nhà, thôn xóm)" />
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -75,4 +72,4 @@ function LocationForm(props) {
   );
 }
 
-export default LocationForm;
+export default LocationFormEdit;

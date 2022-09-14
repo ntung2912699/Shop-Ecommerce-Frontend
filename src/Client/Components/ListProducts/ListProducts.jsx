@@ -30,7 +30,7 @@ class ListProducts extends Component{
                       position='top'
                     />
                     <MDBCardBody>
-                      <MDBCardText style={{maxWidth : '150px'}} className="d-inline-block text-truncate">{product.name}</MDBCardText>
+                      <MDBCardText>{product.name}</MDBCardText>
                       <MDBCardText style={{color : '#dc3545'}}>
                         <FormatPrice price={product.price} />
                       </MDBCardText>

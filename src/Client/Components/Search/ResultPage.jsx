@@ -32,7 +32,6 @@ export default function ResultPage(){
       }, [key]);
 
       if (items.result) {
-        console.log(items.result.success);
         if (items.result.success[0]) {
             return  <section className="container" style={{paddingBottom : '2rem', paddingTop : '3rem'}}>
                     <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
