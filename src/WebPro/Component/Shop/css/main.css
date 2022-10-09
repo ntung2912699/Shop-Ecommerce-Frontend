@@ -1,0 +1,12 @@
+#btn-filter a:hover{
+    color: #fff !important;
+}
+
+.list-cate li.active {
+    background-color: #dc354654 !important;
+    border-color : #dc354654 !important;
+}
+
+/* .list-cate li.active a{
+   color: #fff !important;
+} */

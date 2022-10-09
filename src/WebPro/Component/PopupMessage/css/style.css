@@ -1,0 +1,11 @@
+#message-success{
+    position: absolute;
+    top: 250%;
+    left: 37%;
+}
+
+#message-error{
+    position: absolute;
+    top: 250%;
+    left: 37%;
+}

@@ -1,0 +1,20 @@
+.alert-message-success{
+    position: absolute !important;
+    top: 35%;
+    left: 30%;
+    display: none;
+    z-index: 100000 !important;
+}
+.alert-message-error{
+    position: absolute !important;
+    top: 35%;
+    left: 30%;
+    display: none;
+    z-index: 100000 !important;
+}
+td{
+    min-width: 200px;
+}
+.nav-link {
+    color : black !important;
+}
