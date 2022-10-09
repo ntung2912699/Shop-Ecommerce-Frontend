@@ -138,7 +138,7 @@ export default function Login() {
                           <label className="form-check-label" style={{paddingTop: '2rem'}}><a href='/forgot-password' style={{color: '#0d6efd'}}>Quên Mật Khẩu!</a></label>
                         </div>
                         <div className="d-grid text-center">
-                          <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn chưa có tài khoản <a href='/signup' style={{color: '#0d6efd'}}>Đăng Ký Ngay !</a></label>
+                          <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn chưa có tài khoản <Link to={`/signup`} style={{color: '#0d6efd'}}>Đăng Ký Ngay !</Link></label>
                         </div>
                       </div>
                     </form>
