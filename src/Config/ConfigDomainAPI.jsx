@@ -1,2 +1,2 @@
-const domainApi = "https://ecommerce-shop-api-project.herokuapp.com"
+const domainApi = "https://auto-smart-backend.herokuapp.com"
 export default domainApi
