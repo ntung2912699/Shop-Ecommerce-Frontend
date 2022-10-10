@@ -28,7 +28,7 @@ export default function ChangePassword() {
                 })
                 .then((res) => {
                     window.alert('Thay đổi mật khẩu thành công')
-                    window.location.href = '/';
+                    window.location.href = '/web/';
                 }).catch((error) => {
                     if(error){
                     console.log(error.response.data);
@@ -55,7 +55,7 @@ export default function ChangePassword() {
       <section className="container">
             <nav aria-label="breadcrumb" style={{paddingTop : '4rem'}}>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
+                    <li class="breadcrumb-item"><Link to={`/web/`}>Trang Chủ</Link></li>
                     <li class="breadcrumb-item active">Thay Đổi Mật Khẩu</li>
                 </ol>
             </nav>
