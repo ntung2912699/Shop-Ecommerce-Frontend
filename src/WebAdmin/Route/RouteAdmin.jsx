@@ -48,8 +48,8 @@ class RouteAdmin extends Component{
        if (this.state.permision) {
         return (
             <Routes>
-                <Route path='/' element={<AdminLayOut />}>
-                    <Route path="/dashboard" element={<Dashboard />} />
+                <Route path='' element={<AdminLayOut />}>
+                    <Route path="/" element={<Dashboard />} />
                     <Route path="/products" element={<FetchProducts />} />
                     <Route path="/edit-product/:id" element={<EditProduct />}/>
                     <Route path="/add-product" element={<AddProduct />}/>

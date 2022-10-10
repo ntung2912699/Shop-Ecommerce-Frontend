@@ -51,7 +51,7 @@ class CheckAuth extends React.Component{
                     </Link>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><Link to={`#`} class="dropdown-item">{this.state.profile.name}</Link></li>
-                        <li><Link to={`admin/dashboard`} class="dropdown-item">Admin Site</Link></li>
+                        <li><Link to={`admin`} class="dropdown-item">Admin Site</Link></li>
                         <li><Link to={`/change-password`} class="dropdown-item">Đổi mật khẩu</Link></li>
                         <li><Logout/></li>
                     </ul>
