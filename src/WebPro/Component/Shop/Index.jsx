@@ -42,7 +42,7 @@ class Shop extends React.Component{
                         <div style={{marginTop : '4rem'}}>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><Link to={`/webpro/`}>Trang Chủ</Link></li>
+                                <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
                                 <li class="breadcrumb-item active">Cửa Hàng</li>
                             </ol>
                         </nav>
@@ -101,7 +101,7 @@ class Shop extends React.Component{
                               <div className="col-md-9">
                                 <Outlet />
                                 <div className="text-center">
-                                    <Link to={'/webpro/shop/all-shop'}>
+                                    <Link to={'/shop/all-shop'}>
                                       <button type="button" class="btn btn-outline-danger btn-sm">
                                         <i class="fa fa-angle-double-left" aria-hidden="true"></i> Cửa Hàng
                                       </button>

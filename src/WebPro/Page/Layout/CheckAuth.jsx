@@ -52,7 +52,7 @@ class CheckAuth extends React.Component{
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><Link to={`#`} class="dropdown-item">{this.state.profile.name}</Link></li>
                         <li><Link to={`/admin`} class="dropdown-item">Admin Site</Link></li>
-                        <li><Link to={`/webpro/change-password`} class="dropdown-item">Đổi mật khẩu</Link></li>
+                        <li><Link to={`/change-password`} class="dropdown-item">Đổi mật khẩu</Link></li>
                         <li><Logout/></li>
                     </ul>
                 </li>
@@ -62,7 +62,7 @@ class CheckAuth extends React.Component{
             return(
                 <>
                  <li class="nav-item">
-                    <Link class="nav-link" to={'/webpro/login'}>
+                    <Link class="nav-link" to={'/login'}>
                         Tài Khoản
                     </Link>
                 </li> 
@@ -73,7 +73,7 @@ class CheckAuth extends React.Component{
        return(
         <>
         <li class="nav-item">
-            <Link class="nav-link" to={'/webpro/login'}>
+            <Link class="nav-link" to={'/login'}>
                 Tài Khoản
             </Link>
         </li> 

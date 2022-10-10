@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-        <Route path='/webpro/*' element={<RouteWebPro />} />
+        <Route path='/*' element={<RouteWebPro />} />
         <Route path='/admin/*' element={<RouteAdmin />} />
     </Routes>
   </BrowserRouter>

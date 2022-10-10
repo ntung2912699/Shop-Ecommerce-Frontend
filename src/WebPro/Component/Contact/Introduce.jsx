@@ -8,7 +8,7 @@ class Introduce extends React.Component{
             <section className="container" style={{paddingTop : '4rem'}}>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><Link to={`/webpro/`}>Trang Chủ</Link></li>
+                        <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
                         <li class="breadcrumb-item active">Giới Thiệu</li>
                     </ol>
                 </nav>

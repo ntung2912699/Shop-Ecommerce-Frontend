@@ -25,13 +25,13 @@ export default function SeachFetch(){
         if(props.result.result){
             return props.result.result.map((element , index) => {
                 return (
-                    <Link id="RouterNavLink" key={index} className="h6 text-decoration-none text-truncate" to={`/webpro/detail-product/${element.id}`}>
+                    <Link id="RouterNavLink" key={index} className="h6 text-decoration-none text-truncate" to={`/detail-product/${element.id}`}>
                         <li className="list-group-item d-flex justify-content-between align-items-start row">
                             <div className="overflow-hidden col-4 col-md-2">
                                 <img className="img-fluid img-product-search" src={element.thumbnail} alt="" style={{'width':"4rem", 'height':"4rem"}}/>
                             </div>
                             <div className="col-8 col-md-10">
-                            <Link to={`/webpro/detail-product/${element.id}`}>
+                            <Link to={`/detail-product/${element.id}`}>
                                 <p className="text-truncate" style={{maxWidth : '200px'}}>{element.name}</p>
                             </Link>
                             <small className="text-body"><b style={{color: '#d00031'}}><FormatPrice price={element.price} /></b></small>
@@ -77,7 +77,7 @@ export default function SeachFetch(){
     function SearchProductSubmit(event){
         event.preventDefault();
         const key = document.getElementById('search_product').value;
-        window.location.href = '/webpro/search/'+key
+        window.location.href = '/search/'+key
     }
 
     return(

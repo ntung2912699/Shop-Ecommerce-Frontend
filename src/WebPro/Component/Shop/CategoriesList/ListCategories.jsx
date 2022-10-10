@@ -20,7 +20,7 @@ class ListCategories extends Component{
           return (
             <ul class="list-cate list-group list-group-flush list-category-scroll">
               <li class="list-group-item active">
-                  <Link to={`/webpro/shop/all-shop`}>Tất Cả Các Hãng</Link>
+                  <Link to={`/shop/all-shop`}>Tất Cả Các Hãng</Link>
                   <span class="badge bg-danger rounded-pill">all</span>
                 </li>
               { this.props.categories.map(category => 

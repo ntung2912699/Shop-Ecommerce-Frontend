@@ -52,7 +52,7 @@ class Pagination extends Component {
                     data && data.length > 0 ?
                     data.map((item,index)=>(
                         <MDBCol className="col-6 col-md-3">
-                        <Link to={`/webpro/detail-product/${item.id}`}>
+                        <Link to={`/detail-product/${item.id}`}>
                         <MDBCard className='h-100'>
                             <MDBCardImage
                             src={item.thumbnail}

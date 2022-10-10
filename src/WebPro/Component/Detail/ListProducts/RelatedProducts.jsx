@@ -40,7 +40,7 @@ class RelatedProducts extends React.Component{
               { this.props.products.map((element , index) => {
                 if(element.id != this.props.product_id){
                   return <MDBCol style={{paddingLeft : '0px'}}>
-                    <Link to={`/webpro/detail-product/${element.id}`}>
+                    <Link to={`/detail-product/${element.id}`}>
                     <MDBCard className='h-100'>
                       <MDBCardImage
                         src={element.thumbnail}

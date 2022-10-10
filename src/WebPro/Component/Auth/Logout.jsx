@@ -21,7 +21,7 @@ class Logout extends React.Component{
                 localStorage.removeItem('user_name')
                 localStorage.removeItem('email')
                 localStorage.removeItem('users_id')
-                window.location.href = '/webpro/login';
+                window.location.href = '/login';
                 }).catch((error) => {
                 console.log(error);
             })

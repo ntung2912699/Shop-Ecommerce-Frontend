@@ -22,7 +22,7 @@ class ListProducts extends Component{
             <>
               { this.props.products.map(product => 
                 <MDBCol className="col-6 col-md-3">
-                  <Link to={`/webpro/detail-product/${product.id}`}>
+                  <Link to={`/detail-product/${product.id}`}>
                   <MDBCard className='h-100'>
                     <MDBCardImage
                       src={product.thumbnail}

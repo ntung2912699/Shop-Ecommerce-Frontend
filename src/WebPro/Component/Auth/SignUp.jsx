@@ -83,7 +83,7 @@ export default function SignUn() {
             password_confirmation : password_confirmation,
         })
       .then((res) => {
-        window.location.href = '/webpro/login';
+        window.location.href = '/login';
       })
     } catch (error) {
       if(error){
@@ -100,7 +100,7 @@ export default function SignUn() {
     <section className="container">
       <nav aria-label="breadcrumb" style={{paddingTop : '3rem'}}>
           <ol class="breadcrumb">
-              <li class="breadcrumb-item"><Link to={`/webpro/`}>Trang Chủ</Link></li>
+              <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
               <li class="breadcrumb-item active">Đăng Ký</li>
           </ol>
       </nav>
@@ -150,7 +150,7 @@ export default function SignUn() {
                 </div>
                 <div className="form-check mb-3">
                   <div className="d-grid text-center">
-                    <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn đã có tài khoản <Link to={'/webpro/login'} style={{color: '#0d6efd'}}>Đăng Nhập Ngay !</Link></label>
+                    <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn đã có tài khoản <Link to={'/login'} style={{color: '#0d6efd'}}>Đăng Nhập Ngay !</Link></label>
                   </div>
                 </div>
               </form>

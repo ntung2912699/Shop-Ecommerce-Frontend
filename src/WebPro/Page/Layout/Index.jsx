@@ -11,7 +11,7 @@ class WebProLayOut extends React.Component{
             <main>
                 <Navabar/>
                     <div style={{minHeight: '50vh', paddingTop :'2.5rem', paddingBottom : '1rem'}}>
-                    <Outlet />    
+                        <Outlet />    
                     </div>
                 <Footer/>
             </main>    

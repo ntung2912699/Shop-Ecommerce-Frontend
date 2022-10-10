@@ -69,7 +69,7 @@ export default function Login() {
           localStorage.setItem('user_name', user_name)
           localStorage.setItem('email', email)
           localStorage.setItem('users_id', id)
-          window.location.href = '/webpro/';
+          window.location.href = '/';
         }).catch((error) => {
           if(error){
             let loader = document.getElementById('login-loader')
@@ -89,7 +89,7 @@ export default function Login() {
             <div id='message-render'></div>
             <nav aria-label="breadcrumb" style={{paddingTop : '4rem'}}>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><Link to={`/webpro/`}>Trang Chủ</Link></li>
+                    <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
                     <li class="breadcrumb-item active">Đăng Nhập</li>
                 </ol>
             </nav>
@@ -135,10 +135,10 @@ export default function Login() {
                       </div>
                       <div className="form-check mb-3">
                       <div className="d-grid text-center">
-                          <label className="form-check-label" style={{paddingTop: '2rem'}}><Link to={`/webpro/forgot-password`} style={{color: '#0d6efd'}}>Quên Mật Khẩu!</Link></label>
+                          <label className="form-check-label" style={{paddingTop: '2rem'}}><Link to={`/forgot-password`} style={{color: '#0d6efd'}}>Quên Mật Khẩu!</Link></label>
                         </div>
                         <div className="d-grid text-center">
-                          <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn chưa có tài khoản <Link to={`/webpro/signup`} style={{color: '#0d6efd'}}>Đăng Ký Ngay !</Link></label>
+                          <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn chưa có tài khoản <Link to={`/signup`} style={{color: '#0d6efd'}}>Đăng Ký Ngay !</Link></label>
                         </div>
                       </div>
                     </form>
