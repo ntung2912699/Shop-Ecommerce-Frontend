@@ -39,7 +39,7 @@ export default function ResultPage(){
                     <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
                     { items.result.map(product => 
                         <MDBCol className="col-6 col-md-3">
-                            <Link to={`/detail-product/${product.id}`}>
+                            <Link to={`/webpro/detail-product/${product.id}`}>
                             <MDBCard className='h-100'>
                             <MDBCardImage
                                 src={product.thumbnail}

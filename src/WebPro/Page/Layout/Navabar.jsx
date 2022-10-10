@@ -19,7 +19,7 @@ class Navabar extends React.Component{
                     >
                     <i class="fas fa-bars"></i>
                     </button>
-                    <Link class="navbar-brand nav-logo" to={'/'}>
+                    <Link class="navbar-brand nav-logo" to={'/webpro/'}>
                         <img className="logo-png"
                         src="https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Free-Car-Logo-Design-Source-PNG-Transparent.png"
                         height="50"
@@ -31,13 +31,13 @@ class Navabar extends React.Component{
                             <Link class="nav-link" to={'/'}>Trang Chủ</Link>
                             </li> */}
                             <li class="nav-item">
-                            <Link class="nav-link" to={'/shop/all-shop'}>Cửa Hàng</Link>
+                            <Link class="nav-link" to={'/webpro/shop/all-shop'}>Cửa Hàng</Link>
                             </li>
                             <li class="nav-item">
-                            <Link class="nav-link" to={'/introduce'}>Giới Thiệu</Link>
+                            <Link class="nav-link" to={'/webpro/introduce'}>Giới Thiệu</Link>
                             </li>
                             <li class="nav-item">
-                            <Link class="nav-link" to={'/policy'}>Chính Sách</Link>
+                            <Link class="nav-link" to={'/webpro/policy'}>Chính Sách</Link>
                             </li>
                             <CheckAuth/> 
                         </ul>

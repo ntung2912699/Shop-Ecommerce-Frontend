@@ -31,7 +31,6 @@ export default function ForgotPassword() {
       event.preventDefault();
       let validate = validateHandler();
       if(validate === true){
-        console.log(2);
         let email = document.getElementById('emailInput').value
         let loader = document.getElementById('login-loader')
         loader.style.display = 'block'
@@ -43,7 +42,7 @@ export default function ForgotPassword() {
           })
         .then((res) => {
             window.alert("mật khẩu mới được gửi vào email của bạn")
-            window.location.href = '/login'
+            window.location.href = '/webpro/login'
         }).catch((error) => {
           if(error){
             let loader = document.getElementById('login-loader')
@@ -57,7 +56,7 @@ export default function ForgotPassword() {
       <section className="container">
             <nav aria-label="breadcrumb" style={{paddingTop : '4rem'}}>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
+                    <li class="breadcrumb-item"><Link to={`/webpro/`}>Trang Chủ</Link></li>
                     <li class="breadcrumb-item active">Quên Mật Khẩu</li>
                 </ol>
             </nav>

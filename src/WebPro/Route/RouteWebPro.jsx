@@ -21,7 +21,7 @@ class RouteWebPro extends React.Component{
     render(){
         return(
             <Routes>
-                <Route path='' element={<WebProLayOut />}>
+                <Route path='/' element={<WebProLayOut />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/logout" element={<Logout />} />

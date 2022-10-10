@@ -36,7 +36,7 @@ class ListCategories extends Component{
             <Carousel responsive={responsive}>
               { this.props.categories.map(category => 
               <div>
-                <Link to={`/shop/${category.id}`}>
+                <Link to={`/webpro/shop/${category.id}`}>
                   <figure class="figure text-center">
                     <img src={category.logo} width="80" class="figure-img img-fluid rounded" alt="logo..."/>
                     <figcaption class="figure-caption"><b>{category.name}</b></figcaption>

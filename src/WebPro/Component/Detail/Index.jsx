@@ -34,8 +34,8 @@ export default function DetailPage(){
                         <div style={{marginTop : '4rem'}}>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><Link to={`/`}>Trang Chủ</Link></li>
-                                <li class="breadcrumb-item"><Link to={`/detail-product/${items.product.id}`}>Chi tiết sản phẩm</Link></li>
+                                <li class="breadcrumb-item"><Link to={`/webpro/`}>Trang Chủ</Link></li>
+                                <li class="breadcrumb-item"><Link to={`/webpro/detail-product/${items.product.id}`}>Chi tiết sản phẩm</Link></li>
                                 <li class="breadcrumb-item active" aria-current="page">{items.product.name}</li>
                             </ol>
                         </nav>
@@ -49,7 +49,7 @@ export default function DetailPage(){
                         {/* <FetchRelatedProducts id_category={items.id_category} id_product={items.product.id} /> */}
                         <FetchRelatedProducts id_category={items.id_category} id_product={items.product.id} />
                         <div className="text-center" style={{paddingTop : '1rem'}}>
-                            <Link to={'/shop/all-shop'}>
+                            <Link to={'/webpro/shop/all-shop'}>
                                 <button type="button" class="btn btn-outline-danger btn-sm">
                                 <i class="fa fa-angle-double-left" aria-hidden="true"></i> Cửa Hàng
                                 </button>

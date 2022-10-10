@@ -38,7 +38,7 @@ class CheckAuth extends React.Component{
             })
         }
         if(this.state.checkauth == false){
-            window.location.href = '/login'
+            window.location.href = '/webpro/login'
         }
     }
 }
