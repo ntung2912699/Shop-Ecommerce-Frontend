@@ -20,13 +20,11 @@ class ListCategories extends Component{
           return (
             <ul class="list-cate list-group list-group-flush list-category-scroll">
               <li class="list-group-item active">
-                  <Link to={`/shop/all-shop`}>Tất Cả Các Hãng</Link>
-                  <span class="badge bg-danger rounded-pill">all</span>
+                  <Link to={`/shop/all-shop`}>Tất Cả <span class="badge bg-danger rounded-pill">all</span></Link>
                 </li>
               { this.props.categories.map(category => 
                <li class="list-group-item">
-                  <Link to={`${category.id}`}>{category.name} </Link>
-                  <span class="badge bg-danger rounded-pill">{category.count_product}</span>
+                  <Link to={`${category.id}`}>{category.name} <span class="badge bg-danger rounded-pill">{category.count_product}</span></Link>
                 </li>
               )}
             </ul>
