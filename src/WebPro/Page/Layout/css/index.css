@@ -2730,7 +2730,9 @@ textarea.form-control-lg {
   }
 
   .pagination-wrapper{
-    margin-left: -2.8% !important;
+    position: relative;
+    font-size: 11px;
+    margin-left: -9px !important;
   }
 
   .nav-logo{
@@ -2827,13 +2829,6 @@ textarea.form-control-lg {
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
           appearance: none;
-}
-
-.list-category-scroll{
-  max-height: 300px;
-  margin-bottom: 10px;
-  overflow:scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 @media (prefers-reduced-motion: reduce) {

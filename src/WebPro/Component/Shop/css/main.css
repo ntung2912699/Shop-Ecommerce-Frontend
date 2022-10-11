@@ -7,6 +7,79 @@
     border-color : #dc354654 !important;
 }
 
-/* .list-cate li.active a{
-   color: #fff !important;
-} */
+  .list-category-scroll{
+    max-height: 400px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+    
+  #close-btn{
+    display: none;
+  }
+
+  #open-btn{
+    display: none;
+  }
+
+  @media only screen and (max-width: 860px) {
+    #close-btn{
+      display: block;
+    }
+  
+    #open-btn{
+      display: block;
+      margin-left: 40%;
+    }
+
+    #main{
+      margin-bottom: 5%;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 8px;
+      text-decoration: none;
+      color: #1c1b1b;
+      transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+      color: #6c6c6c;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      font-size: 25px;
+      right: 0;
+      margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+  
+    #mySidenav{
+      width: 0;
+      margin-top: 20%;
+    }
+
+    #form-price{
+      width: 12.8rem;
+    }
+  }

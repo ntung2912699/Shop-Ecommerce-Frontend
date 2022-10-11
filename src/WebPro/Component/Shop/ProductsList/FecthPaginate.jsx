@@ -72,10 +72,12 @@ class Pagination extends Component {
                     <div className="text-center"><h5>không có sản phẩm</h5></div>
                 }
                 { totalRecords > 6 &&
-                    <PaginationComponent
+                    <div className="container">
+                        <PaginationComponent
                         getAllData={this.getPaginatedData} 
                         totalRecords={totalRecords}
                         itemsCountPerPage = {limit} />
+                    </div>
                 }
             </>
         );

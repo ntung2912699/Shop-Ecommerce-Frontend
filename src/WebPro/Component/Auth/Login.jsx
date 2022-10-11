@@ -69,7 +69,7 @@ export default function Login() {
           localStorage.setItem('user_name', user_name)
           localStorage.setItem('email', email)
           localStorage.setItem('users_id', id)
-          window.location.href = '/';
+          window.location.assign('/')
         }).catch((error) => {
           if(error){
             let loader = document.getElementById('login-loader')
