@@ -28,7 +28,7 @@ export default function ChangePassword() {
                 })
                 .then((res) => {
                     window.alert('Thay đổi mật khẩu thành công')
-                    window.location.href = '/web/';
+                    window.location.href = '/';
                 }).catch((error) => {
                     if(error){
                     console.log(error.response.data);

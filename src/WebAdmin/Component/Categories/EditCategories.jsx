@@ -83,17 +83,18 @@ export default function EditCategory(){
             .then(res => {
                 const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    const form = document.getElementById('form-categories');
+                    form.reset();
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
-                        window.location.reload();
-                    }, 1000);
+                    }, 2000);
             })
             .catch( error => {
                 const mess = document.getElementById('message-error');
                     mess.setAttribute("style", "display:block;");
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
-                    }, 1000);
+                    }, 2000);
             })
         }
       }
@@ -138,7 +139,7 @@ export default function EditCategory(){
                         <div className="col-md-8 offset-md-2">
                             <div className="card border-0 shadow rounded-3">
                                 <div className="card-body p-4 p-sm-5">
-                                    <form onSubmit={handleSubmit}>
+                                    <form id="form-categories" onSubmit={handleSubmit}>
                                     <h3 className="text-center">Sửa Danh Mục</h3>
                                         <div className="mb-3">
                                             <label for="name" className="form-label">Tên Danh Mục</label>

@@ -22,6 +22,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.4.0",
     "rsuite": "^5.19.0",
+    "serve": "^14.0.1",
     "sweetpagination": "^1.0.15",
     "web-vitals": "^2.1.4"
   },
@@ -30,10 +31,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-   "engines": {
-    "node": "16.16.0",
-    "npm": "8.11.0"
   },
   "eslintConfig": {
     "extends": [

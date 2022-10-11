@@ -52,9 +52,14 @@ class AddCategories extends React.Component{
                     const categories = res.data;
                     const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    const form = document.getElementById('form-categories');
+                    form.reset();
+                    this.setState({
+                        logo : null,
+                        logo_review : null,
+                    })
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
-                        window.location.reload();
                     }, 1000);
                 })
                 .catch( error => {
@@ -78,7 +83,7 @@ class AddCategories extends React.Component{
                  <div className="col-md-8 offset-md-2">
                     <div className="card border-0 shadow rounded-3">
                         <div className="card-body p-4 p-sm-5">
-                            <form onSubmit={this.submitCategories}>
+                            <form id="form-categories" onSubmit={this.submitCategories}>
                                 <h3 className="text-center">Thêm Danh Mục</h3>
                                 <div className="mb-3">
                                     <label for="name" className="form-label">Tên Danh Mục</label>
