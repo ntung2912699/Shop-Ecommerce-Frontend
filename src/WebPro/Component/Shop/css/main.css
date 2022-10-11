@@ -28,6 +28,13 @@
       display: block;
     }
   
+    .list-category-scroll{
+      max-height: 300px;
+      margin-bottom: 10px;
+      overflow:scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
     #open-btn{
       display: block;
       margin-left: 40%;
@@ -54,18 +61,17 @@
       padding: 8px 8px 8px 8px;
       text-decoration: none;
       color: #1c1b1b;
-      transition: 0.3s;
       position: relative;
-      animation-name: example;
-      animation-duration: 2s;
+      animation-name: listcate;
+      animation-duration: 3s;
     }
 
-    @keyframes example {
-      0%   { left:0px; top:0px;}
-      25%  {left:200px; top:0px;}
-      50%  {left:200px; top:0px;}
-      75%  {left:200px; top:0px;}
-      100% {left:0px; top:0px;}
+    @keyframes listcate {
+      0%   {right:0px; top:0px;}
+      25%  {right:200px; top:0px;}
+      50%  {right:200px; top:0px;}
+      75%  {right:200px; top:0px;}
+      100% {right:0px; top:0px;}
     }
     
     .sidenav a:hover {
