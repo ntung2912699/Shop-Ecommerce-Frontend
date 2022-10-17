@@ -1,0 +1,7 @@
+#categories-list-loader{
+    z-index: 100;
+    top: 65px !important;
+    position: relative;
+    left: 45% !important;
+    display: none;
+}

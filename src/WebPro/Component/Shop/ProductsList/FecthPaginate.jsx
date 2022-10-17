@@ -24,6 +24,7 @@ class Pagination extends Component {
         
     componentDidMount(){
         this.loadData(1);
+        
     }
     loadData = (page) =>{
         axios
@@ -46,41 +47,49 @@ class Pagination extends Component {
     }
     render(){
         const { data, totalRecords, limit } = this.state;
-        return(
-            <>
-                {
-                    data && data.length > 0 ?
-                    data.map((item,index)=>(
-                        <MDBCol className="col-6 col-md-3">
-                        <Link to={`/detail-product/${item.id}`}>
-                        <MDBCard className='h-100'>
-                            <MDBCardImage
-                            src={item.thumbnail}
-                            alt='...'
-                            position='top'
-                            />
-                            <MDBCardBody>
-                            <MDBCardText class="d-inline-block text-truncate" style={{maxWidth : '100%'}}>{item.name}</MDBCardText>
-                            <MDBCardText style={{color : '#dc3545'}}>
-                                <FormatPrice price={item.price} />
-                            </MDBCardText>
-                            </MDBCardBody>
-                        </MDBCard>
-                        </Link>
-                        </MDBCol>
-                    )) :
-                    <div className="text-center"><h5>không có sản phẩm</h5></div>
-                }
-                { totalRecords > 6 &&
-                    <div className="container">
-                        <PaginationComponent
-                        getAllData={this.getPaginatedData} 
-                        totalRecords={totalRecords}
-                        itemsCountPerPage = {limit} />
-                    </div>
-                }
-            </>
-        );
+        if (data && data.length > 0) {
+            return(
+                <>
+                    {
+                        data && data.length > 0 ?
+                        data.map((item,index)=>(
+                            <MDBCol className="col-6 col-md-3">
+                            <Link to={`/detail-product/${item.id}`}>
+                            <MDBCard className='h-100'>
+                                <MDBCardImage
+                                src={item.thumbnail}
+                                alt='...'
+                                position='top'
+                                />
+                                <MDBCardBody>
+                                <MDBCardText class="d-inline-block text-truncate" style={{maxWidth : '100%'}}>{item.name}</MDBCardText>
+                                <MDBCardText style={{color : '#dc3545'}}>
+                                    <FormatPrice price={item.price} />
+                                </MDBCardText>
+                                </MDBCardBody>
+                            </MDBCard>
+                            </Link>
+                            </MDBCol>
+                        )) :
+                        <div className="text-center"><h5>không có sản phẩm</h5></div>
+                    }
+                    { totalRecords > 6 &&
+                        <div className="container col-md-12">
+                            <PaginationComponent
+                            getAllData={this.getPaginatedData} 
+                            totalRecords={totalRecords}
+                            itemsCountPerPage = {limit} />
+                        </div>
+                    }
+                </>
+            );
+        }else{
+            return(
+                <div className="spinner-border products-spinner" id="products-paginate-loader" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            )
+        }
     }
 }
 

@@ -102,13 +102,13 @@ class Shop extends React.Component{
                           </div>
                           <div className="col-md-9">
                             <Outlet />
-                            <div className="text-center">
+                            {/* <div className="text-center">
                                 <Link to={'/shop/all-shop'}>
                                   <button type="button" class="btn btn-outline-danger btn-sm">
                                     <i class="fa fa-angle-double-left" aria-hidden="true"></i> Cửa Hàng
                                   </button>
                                 </Link>
-                              </div>
+                              </div> */}
                           </div>
                         </div>
                         </div>

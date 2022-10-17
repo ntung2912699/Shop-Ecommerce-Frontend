@@ -5,9 +5,29 @@
 .search-spinner{
     display: none;
     z-index: 100;
-    top: 20px;
+    top: 55px;
     position: absolute;
-    left: 45%;
+    left: 62%;
+}
+
+.spinner-border-search{
+  width: 2rem;
+  height: 2rem;
+  vertical-align: -0.125em;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: 0.75s linear infinite spinner-border;
+}
+
+@media only screen and (max-width: 860px) {
+  .search-spinner{
+    display: none;
+    z-index: 100;
+    top: 100% !important;
+    position: absolute;
+    left: 44% !important;
+}
 }
 
 .active-pink-2 input.form-control[type=text]:focus:not([readonly]) {

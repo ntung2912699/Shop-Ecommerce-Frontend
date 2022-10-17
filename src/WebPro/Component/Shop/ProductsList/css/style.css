@@ -11,3 +11,10 @@
     background-color: #dc3545;
     border-color: #dc3545;
 }
+#products-paginate-loader{
+    z-index: 100;
+    top: 50% !important;
+    position: relative !important;
+    left: 48% !important;
+    display: inline-block;
+}

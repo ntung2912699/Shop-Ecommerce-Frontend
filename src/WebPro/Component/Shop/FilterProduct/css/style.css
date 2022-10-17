@@ -1,6 +1,15 @@
-.products-spinner{
+#price-filter-loader{
     z-index: 100;
-    top: -50%;
+    top: 15%;
     position: relative;
-    left: 50%;
+    left: 48%;
+    display: none;
+}
+
+#categories-filter-loader{
+    z-index: 100;
+    top: 15%;
+    position: relative;
+    left: 48%;
+    display: none;
 }

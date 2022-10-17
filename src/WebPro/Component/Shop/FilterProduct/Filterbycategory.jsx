@@ -11,6 +11,10 @@ export default function Filterbycategories(){
     const { id } = useParams();
     
     useEffect(() => {
+        const loader = document.getElementById('categories-filter-loader');
+        if (loader) {
+            loader.style.display = 'block';
+        }
         axios.get(`${domainApi}/api/get-list-product/by-categories/`+id)
         .then(res => {
             const product = res.data;
@@ -23,19 +27,21 @@ export default function Filterbycategories(){
             if (formPrice) {
                 formPrice.reset();
             }
+            if (loader) {
+                loader.style.display = 'none';
+            }
         })
         .catch( error => console.log(error) )
       }, [id]);
 
         if(items.product){
             return (
-                <ListProductsFilter products={items.product.products} categoriesname={items.product.name}/>
-            )
-        }else{  
-            return (
-                <div class="spinner-border detail-spinner" id="detail-loader" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
+                <>
+                    <div class="spinner-border categories-filter-spinner" id="categories-filter-loader" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <ListProductsFilter products={items.product.products} categoriesname={items.product.name}/>
+                </>
             )
         }
 

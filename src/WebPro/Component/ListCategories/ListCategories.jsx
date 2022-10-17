@@ -30,7 +30,6 @@ class ListCategories extends Component{
       }
       
       render() {
-        if(this.props.categories){
           return (
             <>
             <Carousel responsive={responsive}>
@@ -47,13 +46,6 @@ class ListCategories extends Component{
               </Carousel>
             </>
           )
-        }else{
-          return(
-            <div class="spinner-border products-spinner" id="products-loader" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-          )
         }
-      }
 }
 export default ListCategories;

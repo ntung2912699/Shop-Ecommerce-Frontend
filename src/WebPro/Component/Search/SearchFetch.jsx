@@ -13,11 +13,9 @@ export default function SeachFetch(){
         document.addEventListener("click", (e) => {
         const calendarBlock = document.querySelector(".dropstart");
         let modalResult = document.getElementById('content-result');
-        let loader = document.getElementById('search-loader');
         if (!calendarBlock.contains(e.target)) {
             setItems([]);
             modalResult.style.display = 'none';
-            loader.style.display = 'none';
         }
       });
     }
@@ -41,13 +39,6 @@ export default function SeachFetch(){
                 )
             })   
         }
-        else{
-            return (
-                <div class="spinner-border search-spinner" id="search-loader" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            )
-        }
     }  
 
     function SearchProduct(){
@@ -56,8 +47,8 @@ export default function SeachFetch(){
         let loader = document.getElementById('search-loader');
         if(modalResult && loader){
             modalResult.style.display = 'block';
-            loader.style.display = 'block';
         }
+        loader.style.display = 'inline-block';
         axios.post(
         `${domainApi}/api/search-products`,
         {
@@ -69,6 +60,7 @@ export default function SeachFetch(){
                 result : res.data
             })
             modalResult.style.minHeight = '0px';
+            loader.style.display = 'none';
         }).catch((error) => {
             console.log(error)
         })
@@ -92,6 +84,9 @@ export default function SeachFetch(){
                 </ol>
             </div>
         </form>
+        <div class="spinner-border-search search-spinner" id="search-loader" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
         </>
     )
 }
