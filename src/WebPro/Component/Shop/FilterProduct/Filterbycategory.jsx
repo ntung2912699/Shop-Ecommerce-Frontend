@@ -11,10 +11,8 @@ export default function Filterbycategories(){
     const { id } = useParams();
     
     useEffect(() => {
-        const loader = document.getElementById('categories-filter-loader');
-        if (loader) {
-            loader.style.display = 'block';
-        }
+        const loader = document.getElementById('products-shop-loader');
+        loader.style.display = 'block';
         axios.get(`${domainApi}/api/get-list-product/by-categories/`+id)
         .then(res => {
             const product = res.data;
@@ -27,9 +25,7 @@ export default function Filterbycategories(){
             if (formPrice) {
                 formPrice.reset();
             }
-            if (loader) {
-                loader.style.display = 'none';
-            }
+            loader.style.display = 'none';
         })
         .catch( error => console.log(error) )
       }, [id]);

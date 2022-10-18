@@ -636,6 +636,13 @@ progress {
   background-color: #dc3545 !important;
   box-shadow: 0px 1px 1px rgba(255, 208, 0, 0.075) inset, 0px 0px 8px rgba(76, 76, 76, 0.5) !important; 
 }
+#products-shop-loader{
+  z-index: 100;
+  top: 250px !important;
+  position: relative !important;
+  left: 60% !important;
+  display: inline-block;
+}
 .accordion-button{
     color: #1b1b1b !important;
     border-color: #dc3545 !important;
@@ -2728,6 +2735,14 @@ textarea.form-control-lg {
     width : 100% !important;
     margin-right: 0rem;
   }
+
+  #products-shop-loader{
+    z-index: 100;
+    top: 250px !important;
+    position: relative !important;
+    left: 48% !important;
+    display: inline-block;
+}
 
   .pagination-wrapper{
     position: relative;

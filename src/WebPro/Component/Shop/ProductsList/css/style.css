@@ -11,10 +11,21 @@
     background-color: #dc3545;
     border-color: #dc3545;
 }
-#products-paginate-loader{
+#products-shop-loader{
     z-index: 100;
-    top: 50% !important;
+    top: 250px !important;
     position: relative !important;
-    left: 48% !important;
+    left: 60% !important;
     display: inline-block;
+}
+
+@media only screen and (max-width: 860px) {
+
+  #products-shop-loader{
+    z-index: 100;
+    top: 250px !important;
+    position: relative !important;
+    left: 46% !important;
+    display: inline-block;
+  }
 }

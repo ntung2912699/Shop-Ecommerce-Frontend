@@ -27,6 +27,8 @@ class Pagination extends Component {
         
     }
     loadData = (page) =>{
+        const loader = document.getElementById('products-shop-loader');
+        loader.style.display = 'block';
         axios
             .get(`${this.props.url}`+page)
             .then(res => {
@@ -40,6 +42,7 @@ class Pagination extends Component {
                     totalRecords : data.total ? data.total : 0,
                     limit : data.per_page ? data.per_page : 6
                 })
+                loader.style.display = 'none';
             });
     }
     getPaginatedData = page =>{
@@ -83,12 +86,6 @@ class Pagination extends Component {
                     }
                 </>
             );
-        }else{
-            return(
-                <div className="spinner-border products-spinner" id="products-paginate-loader" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            )
         }
     }
 }

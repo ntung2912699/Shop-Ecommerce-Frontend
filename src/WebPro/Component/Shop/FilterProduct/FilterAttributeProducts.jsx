@@ -13,10 +13,8 @@ export default function FilterAttributeProducts(){
     const { id_category } = useParams('id_category');
     
     useEffect(() => {
-        const loader = document.getElementById('price-filter-loader');
-        if (loader) {
-            loader.style.display = 'block';
-        }
+        const loader = document.getElementById('products-shop-loader');
+        loader.style.display = 'block';
         axios.post(`${domainApi}/api/filter-product`,
         {
             'price_min' : min,
@@ -26,9 +24,7 @@ export default function FilterAttributeProducts(){
         .then(res => {
         const products = res.data;
         setItems({ products });
-        if (loader) {
-            loader.style.display = 'none';
-        }
+        loader.style.display = 'none';
         })
         .catch(error => console.log(error));
         window.scrollTo(0, 0)

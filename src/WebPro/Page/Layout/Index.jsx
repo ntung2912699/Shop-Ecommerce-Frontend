@@ -11,6 +11,9 @@ class WebProLayOut extends React.Component{
             <main>
                 <Navabar/>
                     <div style={{minHeight: '50vh', paddingTop :'2.5rem', paddingBottom : '1rem'}}>
+                        <div className="spinner-border" id="products-shop-loader" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
                         <Outlet />    
                     </div>
                 <Footer/>
