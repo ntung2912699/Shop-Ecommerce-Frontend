@@ -2736,13 +2736,13 @@ textarea.form-control-lg {
     margin-right: 0rem;
   }
 
-  #products-shop-loader{
+  /* #products-shop-loader{
     z-index: 100;
     top: 250px !important;
     position: relative !important;
     left: 48% !important;
-    display: inline-block;
-}
+    display: none;
+} */
 
   .pagination-wrapper{
     position: relative;
