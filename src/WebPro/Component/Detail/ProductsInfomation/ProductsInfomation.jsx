@@ -31,8 +31,8 @@ class ProductsInfomation extends React.Component{
                                         {
                                         Object.keys(this.props.info.product.attribute).map((e, i)=>{
                                             return <tr>
-                                                <td>{e}:</td>
-                                                <td>
+                                                <td style={{minWidth : '150px'}}>{e}:</td>
+                                                <td style={{minWidth : '150px'}}>
                                                     { this.props.info.product.attribute[e].map((element, index) => {
                                                         return <>
                                                             {element.value}

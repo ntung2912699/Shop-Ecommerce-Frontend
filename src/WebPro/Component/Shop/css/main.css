@@ -23,6 +23,71 @@
     display: none;
   }
 
+  @media only screen and (max-width: 667px) {
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 8px;
+      text-decoration: none;
+      color: #1c1b1b;
+      position: relative;
+      animation-name: listcate;
+      animation-duration: 3s;
+    }
+
+    @keyframes listcate {
+      0%   {right:0px; top:0px;}
+      25%  {right:200px; top:0px;}
+      50%  {right:200px; top:0px;}
+      75%  {right:200px; top:0px;}
+      100% {right:0px; top:0px;}
+    }
+    
+    .sidenav a:hover {
+      color: #6c6c6c;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      font-size: 25px;
+      right: 0;
+      margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 667px) {
+      .sidenav {padding-top: 13px !important;}
+      .sidenav a {font-size: 13px !important;}
+      #form-filter-price{
+        margin-right: 10px;
+        font-size: 13px;
+      }
+      #form-filter-price input {
+        font-size: 13px;
+      }
+    }
+  
+    #mySidenav{
+      width: 0;
+      margin-top: 20%;
+    }
+
+    #form-price{
+      width: 12.8rem;
+    }
+  }
+
   @media only screen and (max-width: 860px) {
     #close-btn{
       display: block;

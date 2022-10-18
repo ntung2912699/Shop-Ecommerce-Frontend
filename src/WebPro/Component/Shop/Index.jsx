@@ -83,8 +83,8 @@ class Shop extends React.Component{
                                             </select>
                                     
                                             <div class="d-grid gap-2" style={{paddingTop: '1rem'}}>
-                                              <button id="btn-filter" class="btn btn-outline-danger btn-sm" disabled type="button">
-                                                <Link style={{color : '#dc3545'}} to={`fillter-price/${this.state.price_min}/${this.state.price_max}/${this.state.id_category}`}>
+                                              <button id="btn-filter" class="btn btn-danger btn-sm" disabled type="button">
+                                                <Link style={{color : '#fff'}} to={`fillter-price/${this.state.price_min}/${this.state.price_max}/${this.state.id_category}`}>
                                                   <div className="text-center">Áp Dụng</div>
                                                 </Link>
                                               </button>
@@ -102,13 +102,6 @@ class Shop extends React.Component{
                           </div>
                           <div className="col-md-9">
                             <Outlet />
-                            {/* <div className="text-center">
-                                <Link to={'/shop/all-shop'}>
-                                  <button type="button" class="btn btn-outline-danger btn-sm">
-                                    <i class="fa fa-angle-double-left" aria-hidden="true"></i> Cửa Hàng
-                                  </button>
-                                </Link>
-                              </div> */}
                           </div>
                         </div>
                         </div>
