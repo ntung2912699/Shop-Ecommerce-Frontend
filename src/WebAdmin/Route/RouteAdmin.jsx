@@ -13,14 +13,12 @@ import AddCategories from "../Component/Categories/AddCategories";
 import EditCategory from "../Component/Categories/EditCategories";
 import FecthUsers from "../Component/Users/Index";
 import domainApi from "../../Config/ConfigDomainAPI";
+import './css/style.css';
 
 class RouteAdmin extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            permision : null,
-            authFalse : null,
-        }
+        this.state = {}
     }
     async componentDidMount(){
         const accesstoken = localStorage.getItem('access_token')
@@ -62,7 +60,7 @@ class RouteAdmin extends Component{
                 </Route>
             </Routes>
         )
-       }else{
+       }if(this.state.authFalse) {
         return (
             <section style={{paddingTop : '5rem'}}>
                 <div className="container">
@@ -83,6 +81,12 @@ class RouteAdmin extends Component{
                     </div>
                 </div>
             </section>
+        )
+       }else{
+        return (
+            <div class="spinner-border check-admin-loader" id="check-admin-loader" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         )
        }
     }

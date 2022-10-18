@@ -27,6 +27,8 @@ class EditAtributeValue extends React.Component{
         }
         const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+            const loader = document.getElementById('loader-main');
+            loader.style.display = 'block';
             axios.post(`${domainApi}/api/admin/update-attribute-value-admin/`+id,formData,
             {
                 'headers': {
@@ -36,13 +38,15 @@ class EditAtributeValue extends React.Component{
                 .then((res) => {
                     const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
-                        window.location.reload();
+                        // window.location.reload();
                     }, 1000);
                 }).catch(error => {
                     const mess = document.getElementById('message-error');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                     }, 1000);

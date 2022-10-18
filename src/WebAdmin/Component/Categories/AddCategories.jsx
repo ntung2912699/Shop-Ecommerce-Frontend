@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import domainApi from "../../../Config/ConfigDomainAPI";
+import './css/style.css';
 
 class AddCategories extends React.Component{
     constructor(props) {
@@ -42,6 +43,8 @@ class AddCategories extends React.Component{
             formData.append("status", status.value);
             const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+                const loader = document.getElementById('add-cate-loader');
+                loader.style.display = 'block';
                 axios.post(`${domainApi}/api/admin/create-categories-admin`,formData,
                 {
                     'headers': {
@@ -58,12 +61,14 @@ class AddCategories extends React.Component{
                         logo : null,
                         logo_review : null,
                     })
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                     }, 1000);
                 })
                 .catch( error => {
                     const mess = document.getElementById('message-error');
+                    loader.style.display = 'none';
                     mess.setAttribute("style", "display:block;");
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
@@ -75,6 +80,9 @@ class AddCategories extends React.Component{
      render(){
         return (
             <section>
+                <div class="spinner-border add-cate-spinner" id="add-cate-loader" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
                 <nav aria-label="breadcrumb" style={{paddingTop : '2rem'}}>
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to={`/admin/categories`}><i className="fa fa-chevron-left" aria-hidden="true"></i> Danh Sách Danh Mục</Link></li>
@@ -87,7 +95,7 @@ class AddCategories extends React.Component{
                                 <h3 className="text-center">Thêm Danh Mục</h3>
                                 <div className="mb-3">
                                     <label for="name" className="form-label">Tên Danh Mục</label>
-                                    <input type="text" className="form-control" id="name" placeholder=""/>
+                                    <input type="text" className="form-control" id="name" placeholder="" required/>
                                 </div>
                                 <div className="mb-3">
                                     <p>logo : </p>
@@ -102,11 +110,11 @@ class AddCategories extends React.Component{
                                         borderRadius : '10px'}}>
                                             <i style={{position : 'relative', top : '25%', left: '30%',fontSize : '3rem', }} className="fa fa-file-image-o" aria-hidden="true"></i>
                                     </label>
-                                    <input hidden className="form-control" onChange={event => this.loadImageLogo(event)} type="file" id="logo"/>
+                                    <input hidden className="form-control" onChange={event => this.loadImageLogo(event)} type="file" id="logo" required/>
                                 </div>
                                 <div className="mb-3">
                                     <label for="status" className="form-label">Trạng Thái</label>
-                                    <input type="text" className="form-control" id="status" placeholder=""/>
+                                    <input type="text" className="form-control" id="status" placeholder="" required/>
                                 </div>
                                 <div className="d-grid gap-2">
                                     <button className="btn btn-danger" type="submit">Thêm Danh Mục</button>

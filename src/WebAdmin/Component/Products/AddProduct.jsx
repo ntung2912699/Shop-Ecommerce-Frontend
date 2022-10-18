@@ -70,6 +70,8 @@ class AddProduct extends React.Component{
             formData.append("status", status.value);
             const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+                const loader = document.getElementById('loader-main');
+                loader.style.display = 'block';
                 axios.post(`${domainApi}/api/admin/create-products-admin`,formData,
                 {
                     'headers': {
@@ -80,6 +82,7 @@ class AddProduct extends React.Component{
                     const product = res.data;
                     const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                         window.location.href = 'edit-product/'+product.id;
@@ -88,6 +91,7 @@ class AddProduct extends React.Component{
                 .catch( error => {
                     const mess = document.getElementById('message-error');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                     }, 1000);

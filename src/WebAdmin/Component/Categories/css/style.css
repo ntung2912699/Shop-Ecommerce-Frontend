@@ -1,0 +1,7 @@
+#add-cate-loader{
+    z-index: 1000;
+    position: relative;
+    top: 270px;
+    left: 48%;
+    display: none;
+}

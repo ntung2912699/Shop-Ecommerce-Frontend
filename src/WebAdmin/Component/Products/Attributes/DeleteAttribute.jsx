@@ -11,6 +11,8 @@ export default function DeleteAttribute(){
         async function deleteAttribute() {
             const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+                const loader = document.getElementById('loader-main');
+                loader.style.display = 'block';
                 axios.delete(`${domainApi}/api/admin/destroy-attribute-admin/`+id,
                 {
                     'headers': {
@@ -20,6 +22,7 @@ export default function DeleteAttribute(){
                 .then(res => {
                     const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none'
                     setTimeout(function(){ 
                         mess.setAttribute("style", "display:none;"); 
                         window.location.href = '/admin/attribute-products';
@@ -28,6 +31,7 @@ export default function DeleteAttribute(){
                 .catch( error => {
                     const mess = document.getElementById('message-error');
                         mess.setAttribute("style", "display:block;");
+                        loader.style.display = 'none';
                         setTimeout(function(){
                             mess.setAttribute("style", "display:none;"); 
                             window.location.reload();

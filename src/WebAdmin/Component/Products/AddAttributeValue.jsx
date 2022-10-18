@@ -14,6 +14,8 @@ class AddAtributeValue extends React.Component{
       async componentDidMount(){
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('loader-main');
+            loader.style.display = 'block';
             await axios.get(`${domainApi}/api/admin/get-list-attributes-admin`,
             {
                 'headers': {
@@ -23,6 +25,7 @@ class AddAtributeValue extends React.Component{
             .then((res) => {
                 const attributes = res.data
                 this.setState({attributes : attributes})
+                loader.style.display = 'none'
             }).catch(error => {
                 console.log(error)
            })  
@@ -38,6 +41,8 @@ class AddAtributeValue extends React.Component{
             const attr_value = attribute_value.value
             const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+                const loader = document.getElementById('loader-main');
+                loader.style.display = 'block';
                 axios.post(`${domainApi}/api/admin/create-attribute-value-admin`,
                     {
                         attribute_id : attr_id,
@@ -51,6 +56,7 @@ class AddAtributeValue extends React.Component{
                     }).then((res) => {
                         const mess = document.getElementById('message-success');
                         mess.setAttribute("style", "display:block;");
+                        loader.style.display = 'none';
                         setTimeout(function(){
                             mess.setAttribute("style", "display:none;"); 
                             window.location.reload();
@@ -58,6 +64,7 @@ class AddAtributeValue extends React.Component{
                     }).catch(error => {
                         const mess = document.getElementById('message-error');
                         mess.setAttribute("style", "display:block;");
+                        loader.style.display = 'none';
                         setTimeout(function(){
                             mess.setAttribute("style", "display:none;"); 
                         }, 1000);

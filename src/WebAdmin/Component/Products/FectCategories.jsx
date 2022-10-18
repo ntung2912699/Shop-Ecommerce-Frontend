@@ -9,6 +9,8 @@ class FecthCategoriesEditForm extends React.Component{
       async componentDidMount(){
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('loader-main');
+                loader.style.display = 'block';
             await axios.get(`${domainApi}/api/admin/get-categories-admin`,
             {
                 'headers': {
@@ -18,6 +20,7 @@ class FecthCategoriesEditForm extends React.Component{
             .then(res => {
             const categories = res.data;
             this.setState({ categories : categories });
+                loader.style.display = 'none';
             })
             .catch(error => console.log(error));
         }

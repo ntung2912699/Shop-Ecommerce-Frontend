@@ -13,6 +13,8 @@ export default function EditAttribute(){
     useEffect(() => {
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('loader-main');
+            loader.style.display = 'block';
             axios.get(`${domainApi}/api/admin/get-attribute-admin/`+id,
             {
                 'headers': {
@@ -22,6 +24,7 @@ export default function EditAttribute(){
             .then(res => {
                 const attribute = res.data;
                 setItems({attribute : attribute})
+                loader.style.display = 'none';
             })
             .catch( error => console.log(error) )
             window.scrollTo(0, 0)
@@ -35,6 +38,8 @@ export default function EditAttribute(){
                 const value_name = name.value
                 const accesstoken = localStorage.getItem('access_token')
                 if(accesstoken){
+                    const loader = document.getElementById('loader-main');
+                    loader.style.display = 'block';
                     await axios.post(`${domainApi}/api/admin/update-attributes/`+id,
                         {
                             name : value_name
@@ -46,10 +51,12 @@ export default function EditAttribute(){
                         }).then(res => {
                             const mess = document.getElementById('message-success');
                             mess.setAttribute("style", "display:block;");
+                            loader.style.display = 'none';
                             setTimeout(function(){ mess.setAttribute("style", "display:none;"); }, 2000);
                     }).catch(error => {
                             const mess = document.getElementById('message-error');
                             mess.setAttribute("style", "display:block;");
+                            loader.style.display = 'none';
                             setTimeout(function(){
                                 mess.setAttribute("style", "display:none;"); 
                                 window.location.reload();
@@ -82,12 +89,6 @@ export default function EditAttribute(){
                         </div>
                     </div>
                 </section>
-            )
-        }else{  
-            return (
-                <div class="spinner-border detail-spinner" id="detail-loader" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
             )
         }
 

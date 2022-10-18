@@ -1,20 +1,48 @@
 .alert-message-success{
     position: absolute !important;
     top: 35%;
-    left: 30%;
+    left: 40%;
     display: none;
-    z-index: 100000 !important;
+    z-index: 10000 !important;
+    width: 250px;
 }
 .alert-message-error{
     position: absolute !important;
     top: 35%;
-    left: 30%;
+    left: 40%;
     display: none;
-    z-index: 100000 !important;
+    z-index: 10000 !important;
+    width: 250px;
 }
 td{
     min-width: 200px;
 }
 .nav-link {
     color : black !important;
+}
+#loader-main{
+    z-index: 100000;
+    position: relative;
+    top: 270px;
+    left: 48%;
+    display: none;
+}
+
+@media only screen and (max-width: 860px) {
+    .alert-message-success{
+        position: absolute !important;
+        top: 35%;
+        left: 18% !important;
+        display: none;
+        z-index: 10000 !important;
+        width: 250px;
+    }
+    .alert-message-error{
+        position: absolute !important;
+        top: 35%;
+        left: 18% !important;
+        display: none;
+        z-index: 10000 !important;
+        width: 250px;
+    }
 }

@@ -12,6 +12,8 @@ class FetchAttribute extends React.Component{
       async componentDidMount(){
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('loader-main');
+            loader.style.display = 'block';
             await axios.get(`${domainApi}/api/admin/get-list-attributes-admin`,
             {
                 'headers': {
@@ -21,6 +23,7 @@ class FetchAttribute extends React.Component{
             .then(res => {
             const attributes = res.data;
             this.setState({ attributes : attributes });
+            loader.style.display = 'none'
             })
             .catch(error => console.log(error));
         }

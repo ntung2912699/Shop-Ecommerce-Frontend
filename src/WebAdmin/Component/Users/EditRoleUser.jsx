@@ -14,6 +14,8 @@ class EditRoleUser extends React.Component{
         const role = roles.value
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('loader-main');
+            loader.style.display = 'block';
             axios.post(`${domainApi}/api/admin/update-users-role-admin/`+id,
                 {
                     role : role,
@@ -23,6 +25,7 @@ class EditRoleUser extends React.Component{
                         'Authorization': 'Bearer ' + accesstoken
                         }
                 }).then((res) => {
+                    loader.style.display = 'none';
                     const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
                     setTimeout(function(){
@@ -32,6 +35,7 @@ class EditRoleUser extends React.Component{
                 }).catch(error => {
                     const mess = document.getElementById('message-error');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                     }, 1000);

@@ -96,21 +96,24 @@ class AdminLayOut extends React.Component{
                     </nav>
 
                     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                    <div class="col-sm-3 shadow-lg p-3 mb-5 bg-body rounded alert-message-success" id="message-success">
-                        <div class="card">
-                        <div class="card-body text-center">
-                            <h5 class="card-title" style={{fontSize : '100px', color : 'green'}}><i class="fa fa-check" aria-hidden="true"></i></h5>
-                            <p class="card-text">Thành Công</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 shadow-lg p-3 mb-5 bg-body rounded alert-message-error" id="message-error">
-                        <div class="card">
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded alert-message-success" id="message-success">
+                            <div class="card">
                             <div class="card-body text-center">
-                                <h5 class="card-title" style={{fontSize : '100px', color : 'red'}}><i class="fa fa-exclamation" aria-hidden="true"></i></h5>
-                                <p class="card-text">Vui Lòng Thử Lại</p>
+                                <h5 class="card-title" style={{fontSize : '100px', color : 'green'}}><i class="fa fa-check" aria-hidden="true"></i></h5>
+                                <p class="card-text">Thành Công</p>
+                            </div>
                             </div>
                         </div>
+                        <div class="shadow-lg p-3 mb-5 bg-body rounded alert-message-error" id="message-error">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title" style={{fontSize : '100px', color : 'red'}}><i class="fa fa-exclamation" aria-hidden="true"></i></h5>
+                                    <p class="card-text">Vui Lòng Thử Lại</p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="spinner-border loader-main-spinner" id="loader-main" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                         <Outlet/>
                     </main>

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import domainApi from "../../../Config/ConfigDomainAPI";
+import './css/style.css';
 
 export default function EditCategory(){
     const [items, setItems] = useState([]);
@@ -74,6 +75,8 @@ export default function EditCategory(){
         }
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('add-cate-loader');
+            loader.style.display = 'block';
             axios.post(`${domainApi}/api/admin/update-categories-admin/`+items.category.id,formData,
             {
                 'headers': {
@@ -85,6 +88,7 @@ export default function EditCategory(){
                     mess.setAttribute("style", "display:block;");
                     const form = document.getElementById('form-categories');
                     form.reset();
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                     }, 2000);
@@ -103,6 +107,8 @@ export default function EditCategory(){
         e.preventDefault()
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('add-cate-loader');
+            loader.style.display = 'block';
             axios.delete(`${domainApi}/api/admin/destroy-categories-admin/`+items.category.id,
             {
                 'headers': {
@@ -112,6 +118,7 @@ export default function EditCategory(){
             .then(res => {
                 const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                         window.location.href = '/admin/categories';
@@ -120,6 +127,7 @@ export default function EditCategory(){
             .catch( error => {
                 const mess = document.getElementById('message-error');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                         window.alert("Vui Lòng Xoá Hoặc Chỉnh Sửa Các Sản Phẩm Thuộc Danh Mục Trước Khi Thực Hiện Xoá Danh Mục")
@@ -131,6 +139,9 @@ export default function EditCategory(){
         if(items.category){
                 return (
                     <section>
+                        <div class="spinner-border add-cate-spinner" id="add-cate-loader" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                         <nav aria-label="breadcrumb" style={{paddingTop : '2rem'}}>
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item"><Link to={`/admin/categories`}><i className="fa fa-chevron-left" aria-hidden="true"></i> Danh Sách Danh Mục</Link></li>

@@ -156,6 +156,8 @@ export default function EditProduct(){
 
         const accesstoken = localStorage.getItem('access_token')
         if(accesstoken){
+            const loader = document.getElementById('loader-main');
+            loader.style.display = 'block';
             axios.post(`${domainApi}/api/admin/update-products-admin/`+items.product.id,formData,
             {
                 'headers': {
@@ -166,6 +168,7 @@ export default function EditProduct(){
                 const product = res.data;
                 const mess = document.getElementById('message-success');
                 mess.setAttribute("style", "display:block;");
+                loader.style.display = 'none';
                 setTimeout(function(){
                     mess.setAttribute("style", "display:none;"); 
                     window.location.reload();
@@ -174,6 +177,7 @@ export default function EditProduct(){
             .catch( error => {
                 const mess = document.getElementById('message-error');
                 mess.setAttribute("style", "display:block;");
+                loader.style.display = 'none';
                 setTimeout(function(){
                     mess.setAttribute("style", "display:none;"); 
                 }, 1000);
@@ -186,6 +190,8 @@ export default function EditProduct(){
             const id_value = id;
             const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+                const loader = document.getElementById('loader-main');
+                loader.style.display = 'block';
                 axios.delete(`${domainApi}/api/admin/destroy-attribute-value-admin/`+id_value,
                 {
                     'headers': {
@@ -196,6 +202,7 @@ export default function EditProduct(){
                     const product = res.data;
                     const mess = document.getElementById('message-success');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                         window.location.reload()
@@ -204,6 +211,7 @@ export default function EditProduct(){
                 .catch( error => {
                     const mess = document.getElementById('message-error');
                     mess.setAttribute("style", "display:block;");
+                    loader.style.display = 'none';
                     setTimeout(function(){
                         mess.setAttribute("style", "display:none;"); 
                     }, 1000);
@@ -215,6 +223,8 @@ export default function EditProduct(){
             e.preventDefault()
             const accesstoken = localStorage.getItem('access_token')
             if(accesstoken){
+                const loader = document.getElementById('loader-main');
+                loader.style.display = 'block';
                 axios.delete(`${domainApi}/api/admin/destroy-products-admin/`+items.product.id,
                 {
                     'headers': {
@@ -224,6 +234,7 @@ export default function EditProduct(){
                 .then(res => {
                     const mess = document.getElementById('message-success');
                         mess.setAttribute("style", "display:block;");
+                        loader.style.display = 'none';
                         setTimeout(function(){
                             mess.setAttribute("style", "display:none;"); 
                             window.location.href = '/admin/categories';
@@ -232,6 +243,7 @@ export default function EditProduct(){
                 .catch( error => {
                     const mess = document.getElementById('message-error');
                         mess.setAttribute("style", "display:block;");
+                        loader.style.display = 'none';
                         setTimeout(function(){
                             mess.setAttribute("style", "display:none;"); 
                             window.alert("Vui Lòng Xoá Các Thuộc Tính Sản Phẩm Trước Khi Thực Hiện Xoá Sản Phẩm")
