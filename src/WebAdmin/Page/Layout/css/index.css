@@ -1,5 +1,5 @@
 .alert-message-success{
-    position: absolute !important;
+    position: fixed !important;
     top: 35%;
     left: 40%;
     display: none;
@@ -7,7 +7,7 @@
     width: 250px;
 }
 .alert-message-error{
-    position: absolute !important;
+    position: fixed !important;
     top: 35%;
     left: 40%;
     display: none;
@@ -30,7 +30,7 @@ td{
 
 @media only screen and (max-width: 860px) {
     .alert-message-success{
-        position: absolute !important;
+        position: fixed !important;
         top: 35%;
         left: 18% !important;
         display: none;
@@ -38,11 +38,19 @@ td{
         width: 250px;
     }
     .alert-message-error{
-        position: absolute !important;
+        position: fixed !important;
         top: 35%;
         left: 18% !important;
         display: none;
         z-index: 10000 !important;
         width: 250px;
+    }
+
+    .table td {
+        min-width: 100px !important;
+    }
+
+    .form-add{
+        padding-bottom: 5rem;
     }
 }

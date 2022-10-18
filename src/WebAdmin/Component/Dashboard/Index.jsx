@@ -87,7 +87,7 @@ class Dashboard extends React.Component{
         if(this.state.total_products && this.state.total_categories && this.state.total_money && this.state.total_users){
             return(
                 <>
-                 <section style={{paddingTop : '2rem'}}>
+                 <section style={{paddingTop : '2rem', paddingBottom : '4rem'}}>
                  <div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className=""></div></div><div className="chartjs-size-monitor-shrink"><div className=""></div></div></div>
                  <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                      <h1 className="h2">Dashboard</h1>

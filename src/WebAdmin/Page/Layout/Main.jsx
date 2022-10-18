@@ -8,6 +8,7 @@ class AdminLayOut extends React.Component{
         return(
            <>
            <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" style={{minHeight: '3rem'}}>
+            <div className="container">
                 <div className="col-md-12 text-center">
                 <img src="https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Free-Car-Logo-Design-Source-PNG-Transparent.png"
                         height="50"/>
@@ -15,7 +16,8 @@ class AdminLayOut extends React.Component{
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                </header>
+            </div>
+            </header>
 
                 <div class="">
                 <div class="row">
@@ -59,63 +61,32 @@ class AdminLayOut extends React.Component{
                             </Link>
                         </li>
                         </ul>
-
-                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-                        <span>Saved reports</span>
-                        <Link class="link-secondary" to={'#'} aria-label="Add a new report">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle align-text-bottom" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                        </Link>
-                        </h6>
-                        <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <Link class="nav-link" to={'#'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text align-text-bottom" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                            Current month
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to={'#'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text align-text-bottom" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                            Last quarter
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to={'#'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text align-text-bottom" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                            Social engagement
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to={'#'}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text align-text-bottom" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                            Year-end sale
-                            </Link>
-                        </li>
-                        </ul>
                     </div>
                     </nav>
 
                     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                        <div class="shadow-lg p-3 mb-5 bg-body rounded alert-message-success" id="message-success">
-                            <div class="card">
-                            <div class="card-body text-center">
-                                <h5 class="card-title" style={{fontSize : '100px', color : 'green'}}><i class="fa fa-check" aria-hidden="true"></i></h5>
-                                <p class="card-text">Thành Công</p>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="shadow-lg p-3 mb-5 bg-body rounded alert-message-error" id="message-error">
-                            <div class="card">
+                        <div className="container">
+                            <div class="shadow-lg p-3 mb-5 bg-body rounded alert-message-success" id="message-success">
+                                <div class="card">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title" style={{fontSize : '100px', color : 'red'}}><i class="fa fa-exclamation" aria-hidden="true"></i></h5>
-                                    <p class="card-text">Vui Lòng Thử Lại</p>
+                                    <h5 class="card-title" style={{fontSize : '100px', color : 'green'}}><i class="fa fa-check" aria-hidden="true"></i></h5>
+                                    <p class="card-text">Thành Công</p>
+                                </div>
                                 </div>
                             </div>
+                            <div class="shadow-lg p-3 mb-5 bg-body rounded alert-message-error" id="message-error">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title" style={{fontSize : '100px', color : 'red'}}><i class="fa fa-exclamation" aria-hidden="true"></i></h5>
+                                        <p class="card-text">Vui Lòng Thử Lại</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="spinner-border loader-main-spinner" id="loader-main" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <Outlet/>
                         </div>
-                    <div class="spinner-border loader-main-spinner" id="loader-main" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                        <Outlet/>
                     </main>
                 </div>
                 </div>

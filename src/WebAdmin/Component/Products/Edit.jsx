@@ -261,117 +261,113 @@ export default function EditProduct(){
                     </ol>
                 </nav>
                 <div className="col-md-12">
-                    <div className="card border-0 shadow rounded-3">
-                        <div className="card-body p-4 p-sm-5">
-                            <div className="row">
-                                <div className="col-md-8" style={{ paddingBottom: '2rem'}}>
-                                    <form onSubmit={submitProduct}>
-                                        <h3 className="text-center">Cập Nhật Sản Phẩm</h3>
-                                        <div class="mb-3">
-                                           <div className="row">
-                                            <div className="col-md-7">
-                                                    <label for="exampleFormControlInput1" class="form-label">Tên Sản Phẩm</label>
-                                                    <input type="text" class="form-control" onChange={event => setName(event)} defaultValue={items.product.name} id="exampleFormControlInput1" placeholder=""/>
-                                                </div>
-                                                <div className="col-md-5">
-                                                    <label for="exampleFormControlInput1" class="form-label">Danh Mục</label>
-                                                    <select class="form-select" onChange={event => setCategoriesId(event)} aria-label="Default select example">
-                                                        <option selected defaultValue={items.product.relationship_for_categories.id}>{items.product.relationship_for_categories.name}</option>
-                                                        <FecthCategoriesEditForm/>
-                                                    </select>
-                                                </div>
-                                           </div>
+                    <div className="row">
+                        <div className="col-md-7" style={{ paddingBottom: '2rem'}}>
+                            <form onSubmit={submitProduct} className="form-add">
+                                <h3 className="text-center">Cập Nhật Sản Phẩm</h3>
+                                <div class="mb-3">
+                                    <div className="row">
+                                    <div className="col-md-7">
+                                            <label for="exampleFormControlInput1" class="form-label">Tên Sản Phẩm</label>
+                                            <input type="text" class="form-control" onChange={event => setName(event)} defaultValue={items.product.name} id="exampleFormControlInput1" placeholder=""/>
                                         </div>
-                                        <div class="mb-3">
-                                            <div className="row">
-                                                <div className="col-md-12 row">
-                                                    <b>Ảnh Chính :</b>
-                                                    <i style={{position : 'absolute', top : '43px', left: '85px',fontSize : '1.3rem',color : '#fff', zIndex : '100' }} onClick={unsetImageThumbnail} class="fa fa-trash-o" aria-hidden="true"></i>
-                                                    <div class="button-wrap col-md-2">
-                                                        <label class="button-file" style={{
-                                                            backgroundImage : `url('${thumbnailold.thumbnailold}')`,
-                                                            backgroundRepeat : 'round',
-                                                            fontSize : '3rem',
-                                                            width : '100%',
-                                                            }} for="thumbnail">
-                                                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                                                        </label>
-                                                        <input id="thumbnail" onChange={event => setImageThumbnail(event)} hidden type="file"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-12 row" style={{paddingTop : '1rem'}}>
-                                                <b>Ảnh Phụ :</b>
-                                                {
-                                                    galleryold.galleryold.map((gallery, index)=>{
-                                                        return <div class="button-wrap col-md-2">
-                                                             <i style={{position : 'absolute', top : '18px', left: '85px',fontSize : '1.3rem',color : '#fff', zIndex: '100' }} onClick={unsetImageGallery} class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        <label class="button-file" id={index} style={{
-                                                            backgroundImage : `url('${gallery}')`,
-                                                            backgroundRepeat : 'round',
-                                                            fontSize : '3rem',
-                                                            width : '100%',
-                                                            }} for={`gallery${index}`}>
-                                                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                                                        </label>
-                                                        <input id={`gallery${index}`} onChange={event => setImageGallery(event)} hidden type="file" multiple/>
-                                                    </div>
+                                        <div className="col-md-5">
+                                            <label for="exampleFormControlInput1" class="form-label">Danh Mục</label>
+                                            <select class="form-select" onChange={event => setCategoriesId(event)} aria-label="Default select example">
+                                                <option selected defaultValue={items.product.relationship_for_categories.id}>{items.product.relationship_for_categories.name}</option>
+                                                <FecthCategoriesEditForm/>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div className="row">
+                                        <div className="col-md-12 row">
+                                            <b>Ảnh Chính :</b>
+                                            <i onClick={unsetImageThumbnail} class="fa fa-trash-o delete-icon-thumbnail" aria-hidden="true"></i>
+                                            <div class="button-wrap col-md-2">
+                                                <label class="button-file" style={{
+                                                    backgroundImage : `url('${thumbnailold.thumbnailold}')`,
+                                                    backgroundRepeat : 'round',
+                                                    fontSize : '3rem',
+                                                    width : '100%',
+                                                    }} for="thumbnail">
+                                                    <i class="fa fa-file-image-o image-icon-thumbnail" aria-hidden="true"></i>
+                                                </label>
+                                                <input id="thumbnail" onChange={event => setImageThumbnail(event)} hidden type="file"/>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-12 row" style={{paddingTop : '1rem'}}>
+                                        <b>Ảnh Phụ :</b>
+                                        {
+                                            galleryold.galleryold.map((gallery, index)=>{
+                                                return <div class="button-wrap col-md-2">
+                                                        <i onClick={unsetImageGallery} class="fa fa-trash-o delete-icon-gallery" aria-hidden="true"></i>
+                                                <label class="button-file" id={index} style={{
+                                                    backgroundImage : `url('${gallery}')`,
+                                                    backgroundRepeat : 'round',
+                                                    fontSize : '3rem',
+                                                    width : '100px',
+                                                    }} for={`gallery${index}`}>
+                                                    <i class="fa fa-file-image-o image-icon-gallery" aria-hidden="true"></i>
+                                                </label>
+                                                <input id={`gallery${index}`} onChange={event => setImageGallery(event)} hidden type="file" multiple/>
+                                            </div>
+                                            })
+                                        }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div className="row">
+                                        <div className="col-md-5">
+                                            <label for="exampleFormControlInput1" class="form-label">Giá</label>
+                                            <input type="text" class="form-control" onChange={event => setPrice(event)} defaultValue={items.product.price} id="exampleFormControlInput1" placeholder=""/>
+                                        </div>
+                                        <div className="col-md-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Số Lượng</label>
+                                            <input type="number" class="form-control" onChange={event => setQuantity(event)} defaultValue={items.product.quantity} id="exampleFormControlInput1" placeholder=""/>
+                                        </div>
+                                        <div className="col-md-4">
+                                            <label for="exampleFormControlInput1" class="form-label">Trạng Thái</label>
+                                            <input type="text" class="form-control" onChange={event => setStatus(event)} defaultValue={items.product.status} id="exampleFormControlInput1" placeholder=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Mô Tả</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" onChange={event => setShortDescription(event)} rows="3">{items.product.short_description}</textarea>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-danger" type="submit">Lưu Lại</button>
+                                    <button class="btn btn-secondary" onClick={handleDelete} type="button">Xoá</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="col-md-5" style={{paddingBottom: '2rem'}}>
+                            <form>
+                                <h3 className="text-center">Thuộc Tính Sản Phẩm</h3>
+                                <div className="row">
+                                {
+                                    Object.keys(items.product.attribute).map((e, i)=>{
+                                        return <div class="mb-3 col-md-6">
+                                                <label for="exampleFormControlInput1" class="form-label">{e}</label>
+                                                { items.product.attribute[e].map((element, index) => {
+                                                    return <>
+                                                        <i style={{color : '#dc3545', marginLeft : '5px'}} onClick={event => deleteAttribute(event, element.id)} class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        <EditAtributeValue attributes={e} attributes_value={element.value} attributes_value_id={element.id} />
+                                                        <input type="text" disabled class="form-control" defaultValue={element.value} id="exampleFormControlInput1" placeholder=""/>
+                                                        </>
                                                     })
                                                 }
-                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <div className="row">
-                                                <div className="col-md-5">
-                                                    <label for="exampleFormControlInput1" class="form-label">Giá</label>
-                                                    <input type="text" class="form-control" onChange={event => setPrice(event)} defaultValue={items.product.price} id="exampleFormControlInput1" placeholder=""/>
-                                                </div>
-                                                <div className="col-md-3">
-                                                    <label for="exampleFormControlInput1" class="form-label">Số Lượng</label>
-                                                    <input type="number" class="form-control" onChange={event => setQuantity(event)} defaultValue={items.product.quantity} id="exampleFormControlInput1" placeholder=""/>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <label for="exampleFormControlInput1" class="form-label">Trạng Thái</label>
-                                                    <input type="text" class="form-control" onChange={event => setStatus(event)} defaultValue={items.product.status} id="exampleFormControlInput1" placeholder=""/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Mô Tả</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" onChange={event => setShortDescription(event)} rows="3">{items.product.short_description}</textarea>
-                                        </div>
-                                        <div class="d-grid gap-2">
-                                            <button class="btn btn-danger" type="submit">Lưu Lại</button>
-                                            <button class="btn btn-secondary" onClick={handleDelete} type="button">Xoá</button>
-                                        </div>
-                                    </form>
+                                        })
+                                    }
                                 </div>
-                                <div className="col-md-4" style={{paddingBottom: '2rem'}}>
-                                    <form>
-                                        <h3 className="text-center">Thuộc Tính Sản Phẩm</h3>
-                                        <div className="row">
-                                        {
-                                            Object.keys(items.product.attribute).map((e, i)=>{
-                                                return <div class="mb-3 col-md-6">
-                                                        <label for="exampleFormControlInput1" class="form-label">{e}</label>
-                                                        { items.product.attribute[e].map((element, index) => {
-                                                            return <>
-                                                                <i style={{color : '#dc3545', marginLeft : '5px'}} onClick={event => deleteAttribute(event, element.id)} class="fa fa-trash-o" aria-hidden="true"></i>
-                                                                <EditAtributeValue attributes={e} attributes_value={element.value} attributes_value_id={element.id} />
-                                                                <input type="text" disabled class="form-control" defaultValue={element.value} id="exampleFormControlInput1" placeholder=""/>
-                                                                </>
-                                                            })
-                                                        }
-                                                    </div>
-                                                })
-                                            }
-                                        </div>
-                                        <div class="d-grid gap-2">
-                                            <AddAtributeValue product_id={items.product.id}/>
-                                        </div>
-                                    </form>
+                                <div class="d-grid gap-2">
+                                    <AddAtributeValue product_id={items.product.id}/>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

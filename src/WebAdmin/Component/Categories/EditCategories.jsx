@@ -148,40 +148,36 @@ export default function EditCategory(){
                             </ol>
                         </nav>
                         <div className="col-md-8 offset-md-2">
-                            <div className="card border-0 shadow rounded-3">
-                                <div className="card-body p-4 p-sm-5">
-                                    <form id="form-categories" onSubmit={handleSubmit}>
-                                    <h3 className="text-center">Sửa Danh Mục</h3>
-                                        <div className="mb-3">
-                                            <label for="name" className="form-label">Tên Danh Mục</label>
-                                            <input type="text" className="form-control" onChange={event => setName(event)} defaultValue={items.category.name} id="name" placeholder=""/>
-                                        </div>
-                                        <div className="mb-3">
-                                            <p>Logo : </p>
-                                            <i style={{position : 'relative', top : '-22px', left: '77px',fontSize : '1.3rem', }} onClick={unsetLogo} className="fa fa-trash-o" aria-hidden="true"></i>
-                                            <label for="logo" id="preview-logo" className="form-label" style={{
-                                                backgroundImage : `url('${logoold.logoold}')`,
-                                                backgroundRepeat : 'round',
-                                                width : '100px',
-                                                height : '100px',
-                                                border : '2px dashed',
-                                                marginLeft : '-18px',
-                                                borderRadius : '10px'}}>
-                                                    <i style={{position : 'relative', top : '25%', left: '30%', fontSize : '3rem', }} className="fa fa-file-image-o" aria-hidden="true"></i>
-                                            </label>
-                                            <input hidden className="form-control" onChange={event => setLogo(event)} type="file" id="logo"/>
-                                        </div>
-                                        <div className="mb-3">
-                                            <label for="status" className="form-label">Trạng Thái</label>
-                                            <input type="text"  onChange={event => setStatus(event)} defaultValue={items.category.status} className="form-control" id="status" placeholder=""/>
-                                        </div>
-                                        <div className="d-grid gap-2">
-                                            <button className="btn btn-danger" type="submit">Xác Nhận</button>
-                                            <button className="btn btn-secondary" onClick={handleDelete} type="button">Xoá</button>
-                                        </div>
-                                    </form>
+                            <form id="form-categories" onSubmit={handleSubmit}>
+                            <h3 className="text-center">Sửa Danh Mục</h3>
+                                <div className="mb-3">
+                                    <label for="name" className="form-label">Tên Danh Mục</label>
+                                    <input type="text" className="form-control" onChange={event => setName(event)} defaultValue={items.category.name} id="name" placeholder=""/>
                                 </div>
-                            </div>
+                                <div className="mb-3">
+                                    <p>Logo : </p>
+                                    <i style={{position : 'relative', top : '-22px', left: '77px',fontSize : '1.3rem', }} onClick={unsetLogo} className="fa fa-trash-o" aria-hidden="true"></i>
+                                    <label for="logo" id="preview-logo" className="form-label" style={{
+                                        backgroundImage : `url('${logoold.logoold}')`,
+                                        backgroundRepeat : 'round',
+                                        width : '100px',
+                                        height : '100px',
+                                        border : '2px dashed',
+                                        marginLeft : '-18px',
+                                        borderRadius : '10px'}}>
+                                            <i style={{position : 'relative', top : '25%', left: '30%', fontSize : '3rem', }} className="fa fa-file-image-o" aria-hidden="true"></i>
+                                    </label>
+                                    <input hidden className="form-control" onChange={event => setLogo(event)} type="file" id="logo"/>
+                                </div>
+                                <div className="mb-3">
+                                    <label for="status" className="form-label">Trạng Thái</label>
+                                    <input type="text"  onChange={event => setStatus(event)} defaultValue={items.category.status} className="form-control" id="status" placeholder=""/>
+                                </div>
+                                <div className="d-grid gap-2">
+                                    <button className="btn btn-danger" type="submit">Xác Nhận</button>
+                                    <button className="btn btn-secondary" onClick={handleDelete} type="button">Xoá</button>
+                                </div>
+                            </form>
                         </div>
                 </section>
             )
