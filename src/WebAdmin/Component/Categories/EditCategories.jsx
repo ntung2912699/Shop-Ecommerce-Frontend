@@ -79,9 +79,11 @@ export default function EditCategory(){
             loader.style.display = 'block';
             axios.post(`${domainApi}/api/admin/update-categories-admin/`+items.category.id,formData,
             {
-                'headers': {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                     'Authorization': 'Bearer ' + accesstoken
-                    }
+                  }
             })
             .then(res => {
                 const mess = document.getElementById('message-success');

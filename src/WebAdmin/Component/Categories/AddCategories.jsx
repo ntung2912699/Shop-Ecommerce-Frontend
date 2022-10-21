@@ -47,9 +47,11 @@ class AddCategories extends React.Component{
                 loader.style.display = 'block';
                 axios.post(`${domainApi}/api/admin/create-categories-admin`,formData,
                 {
-                    'headers': {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
                         'Authorization': 'Bearer ' + accesstoken
-                        }
+                      }
                 })
                 .then(res => {
                     const categories = res.data;

@@ -16,7 +16,7 @@ class FecthCategories extends React.Component{
             await axios.get(`${domainApi}/api/admin/get-categories-admin`,
             {
                 'headers': {
-                'Authorization': 'Bearer ' + accesstoken
+                    'Authorization': 'Bearer ' + accesstoken
                 }
             })
             .then(res => {

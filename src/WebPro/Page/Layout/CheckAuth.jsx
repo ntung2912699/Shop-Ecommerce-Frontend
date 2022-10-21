@@ -13,26 +13,27 @@ class CheckAuth extends React.Component{
         }
       }
 
-    componentDidMount(){
+      async componentDidMount(){
         const token = window.localStorage.getItem('access_token');
         if (token) {
-            axios.get(`${domainApi}/api/auth/user-profile`,
-                {
-                    'headers': {
-                    'Authorization': 'Bearer ' + token
-                    }
-                }
-            )
-            .then(res => {
-            const profile = res.data;
+            await axios.get(`${domainApi}/api/auth/user-profile`,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                  }
+            }).then(response => {
+            const profile = response.data;
                 this.setState({ profile : profile });
             })
             .catch((error) => {
+                console.log(error);
                 if( error ){
-                    localStorage.removeItem('access_token')
-                    localStorage.removeItem('user_name')
-                    localStorage.removeItem('email')
-                    localStorage.removeItem('users_id')
+                    // localStorage.removeItem('access_token')
+                    // localStorage.removeItem('user_name')
+                    // localStorage.removeItem('email')
+                    // localStorage.removeItem('users_id')
                     this.setState({
                         checkAuth : false,
                     })

@@ -45,34 +45,38 @@ export default function Login() {
       }
     }
   
-    async function loginHandler(event){
-      event.preventDefault();
+    function loginHandler(e){
+      e.preventDefault();
       let validate = validateHandler();
       if(validate === true){
-        let email = document.getElementById('emailInput').value
-        let password = document.getElementById('passwordInput').value
-        let loader = document.getElementById('login-loader')
+        const formData = new FormData();
+        const email = document.getElementById('emailInput').value
+        const password = document.getElementById('passwordInput').value
+        const loader = document.getElementById('login-loader')
         loader.style.display = 'block'
-
-        await axios.post(
-          `${domainApi}/api/auth/login`,
+        formData.append("email", email);
+        formData.append("password", password);
+        axios.post(`${domainApi}/api/auth/login`,formData,
           {
-            email: email,
-            password: password
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            }
           })
-        .then((res) => {
-          let access_token = res.data.token
-          let user_name = res.data.user.name
-          let email = res.data.user.email
-          let id = res.data.user.id
-          localStorage.setItem('access_token', access_token)
-          localStorage.setItem('user_name', user_name)
-          localStorage.setItem('email', email)
-          localStorage.setItem('users_id', id)
+        .then((response) => {
+          const access_token = response.data.token
+          const user_name = response.data.user.name
+          const email = response.data.user.email
+          const id = response.data.user.id
+          window.localStorage.setItem('access_token', access_token)
+          window.localStorage.setItem('user_name', user_name)
+          window.localStorage.setItem('email', email)
+          window.localStorage.setItem('users_id', id)
           window.location.assign('/')
         }).catch((error) => {
+          console.log(error);
           if(error){
-            let loader = document.getElementById('login-loader')
+            const loader = document.getElementById('login-loader')
             loader.style.display = 'none'
             document.getElementById('emailInput').style.borderColor = 'red' 
             document.getElementById('passwordInput').style.borderColor = 'red' 
@@ -120,10 +124,10 @@ export default function Login() {
                         </label>
                       </div>
                       <div className="d-grid">
-                        <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Đăng Nhập</button>
+                        <button className="btn btn-danger btn-login text-uppercase fw-bold" type="submit">Đăng Nhập</button>
                       </div>
                       <hr className="my-4"/>
-                      <div className="d-grid mb-2">
+                      {/* <div className="d-grid mb-2">
                         <button className="btn btn-google btn-login text-uppercase fw-bold" type="submit">
                           <i className="fab fa-google me-2"></i> Sign in with Google
                         </button>
@@ -132,7 +136,7 @@ export default function Login() {
                         <button className="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
                           <i className="fab fa-facebook-f me-2"></i> Sign in with Facebook
                         </button>
-                      </div>
+                      </div> */}
                       <div className="form-check mb-3">
                       <div className="d-grid text-center">
                           <label className="form-check-label" style={{paddingTop: '2rem'}}><Link to={`/forgot-password`} style={{color: '#0d6efd'}}>Quên Mật Khẩu!</Link></label>

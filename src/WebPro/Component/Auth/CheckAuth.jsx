@@ -12,9 +12,9 @@ class CheckAuth extends React.Component{
             id : window.localStorage.getItem('users_id')
         }
       }
-    async componentDidMount(){
+     componentDidMount(){
         if(this.state.token){
-            await axios.get(`${domainApi}/api/get-profile-by-user/`+this.state.id,
+            axios.get(`${domainApi}/api/get-profile-by-user/`+this.state.id,
                 {
                     'headers': {
                     'Authorization': 'Bearer ' + this.state.token

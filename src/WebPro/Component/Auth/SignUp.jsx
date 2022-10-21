@@ -66,23 +66,27 @@ export default function SignUn() {
     let validate = validateHandler();
 
     if(validate === true){
+      const formData = new FormData();
       let name = document.getElementById('nameInput').value
       let email = document.getElementById('emailInput').value
       let password = document.getElementById('passwordInput').value
       let password_confirmation = document.getElementById('password_confirmationInput').value
       let loader = document.getElementById('login-loader')
       loader.style.display = 'block'
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("password_confirmation", password_confirmation);
 
     try {
-      axios.post(
-        `${domainApi}/api/auth/register`,
+      axios.post(`${domainApi}/api/auth/register`,formData,
         {
-            name : name,
-            email: email,
-            password: password,
-            password_confirmation : password_confirmation,
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          }
         })
-      .then((res) => {
+      .then((response) => {
         window.location.href = '/login';
       })
     } catch (error) {
