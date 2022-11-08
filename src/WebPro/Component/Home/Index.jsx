@@ -4,6 +4,9 @@ import FetchCategories from "./HomeComponent/CategoriesList/FetchCategories";
 import FetchProducts from "./HomeComponent/ProductsList/FetchProducts";
 
 class HomePage extends React.Component{
+    componentDidMount(){
+        window.scrollTo(0, 0)
+    }
     render(){
         return (
             <>

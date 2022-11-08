@@ -5,6 +5,10 @@ import CheckAuth from "./CheckAuth";
 
 class Navabar extends React.Component{
     render(){
+        function hideNav() {
+            const element = document.getElementById("navbarSupportedContent");
+            element.classList.remove("show");
+        }
         return (
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div class="container">
@@ -27,17 +31,14 @@ class Navabar extends React.Component{
                     </Link>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
-                            {/* <li class="nav-item">
-                            <Link class="nav-link" to={'/'}>Trang Chủ</Link>
-                            </li> */}
                             <li class="nav-item">
-                            <Link class="nav-link" to={'/shop/all-shop'}>Cửa Hàng</Link>
+                            <Link class="nav-link" onClick={hideNav} to={'/shop/all-shop'}>Cửa Hàng</Link>
                             </li>
                             <li class="nav-item">
-                            <Link class="nav-link" to={'/introduce'}>Giới Thiệu</Link>
+                            <Link class="nav-link" onClick={hideNav} to={'/introduce'}>Giới Thiệu</Link>
                             </li>
                             <li class="nav-item">
-                            <Link class="nav-link" to={'/policy'}>Chính Sách</Link>
+                            <Link class="nav-link" onClick={hideNav} to={'/policy'}>Chính Sách</Link>
                             </li>
                             <CheckAuth/> 
                         </ul>

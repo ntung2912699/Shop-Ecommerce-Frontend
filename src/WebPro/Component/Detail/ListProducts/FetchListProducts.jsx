@@ -11,7 +11,6 @@ class FetchRelatedProducts extends React.Component{
         }
     }
     async componentDidMount(){
-        console.log('aaa');
         await axios.get(`${domainApi}/api/get-list-product/by-categories/`+this.props.id_category)
         .then(res => {
             const products = res.data;

@@ -19,11 +19,18 @@ export default function SeachFetch(){
         }
       });
     }
+    function hideNav() {
+        const element = document.getElementById("navbarSupportedContent");
+        if(element){
+            element.classList.remove("show");
+        }
+    }
+
     function ResultSearch(props){
         if(props.result.result){
             return props.result.result.map((element , index) => {
                 return (
-                    <Link id="RouterNavLink" key={index} className="h6 text-decoration-none text-truncate" to={`/detail-product/${element.id}`}>
+                    <Link id="RouterNavLink" key={index} onClick={hideNav} className="h6 text-decoration-none text-truncate" to={`/detail-product/${element.id}`}>
                         <li className="list-group-item d-flex justify-content-between align-items-start row">
                             <div className="overflow-hidden col-4 col-md-2">
                                 <img className="img-fluid img-product-search" src={element.thumbnail} alt="" style={{'width':"4rem", 'height':"4rem"}}/>
@@ -49,10 +56,15 @@ export default function SeachFetch(){
             modalResult.style.display = 'block';
         }
         loader.style.display = 'inline-block';
+        const formData = new FormData();
+        formData.append("search", key);
         axios.post(
-        `${domainApi}/api/search-products`,
+        `${domainApi}/api/search-products`,formData,
         {
-            'search': key
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            }
         }
         )
         .then((res) => {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import domainApi from "../../../Config/ConfigDomainAPI";
 
 export default function ForgotPassword() {
-
+    window.scrollTo(0, 0)
     function validateHandler(){
       const validateEmail = (email) => {
         return email.match(
@@ -31,15 +31,13 @@ export default function ForgotPassword() {
       event.preventDefault();
       let validate = validateHandler();
       if(validate === true){
+        const formData = new FormData();
         let email = document.getElementById('emailInput').value
         let loader = document.getElementById('login-loader')
         loader.style.display = 'block'
-
+        formData.append('email', email)
         await axios.post(
-          `${domainApi}/api/forgot-password`,
-          {
-            email: email,
-          })
+          `${domainApi}/api/forgot-password`,formData)
         .then((res) => {
             window.alert("mật khẩu mới được gửi vào email của bạn")
             window.location.href = '/login'

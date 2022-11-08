@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import domainApi from '../../../Config/ConfigDomainAPI';
 
 export default function SignUn() {
-
+  window.scrollTo(0, 0)
   function validateHandler(){
     const validateEmail = (email) => {
       return email.match(

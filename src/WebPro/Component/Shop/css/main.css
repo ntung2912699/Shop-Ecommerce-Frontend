@@ -161,6 +161,15 @@
       margin-top: 20%;
     }
 
+    .hide_menu{
+      width: 0 !important;
+    }
+
+    .show_btn{
+      display: block !important;
+      margin-left: -32% !important;
+    }
+
     #form-price{
       width: 12.8rem;
     }

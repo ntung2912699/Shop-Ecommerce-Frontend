@@ -19,11 +19,16 @@ export default function ResultPage(){
     const { key } = useParams();
 
     useEffect(() => {
+        const formData = new FormData();
+        formData.append('search',key)
         axios.post(
-        `${domainApi}/api/search-products`,
-        {
-            'search': key
-        }
+        `${domainApi}/api/search-products`,formData,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            }
+          }
         )
         .then(res => {
             const result = res.data;

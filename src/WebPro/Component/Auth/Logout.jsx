@@ -29,7 +29,7 @@ class Logout extends React.Component{
     render(){
         return (
             <li>
-                <a className="dropdown-item" onClick={this.LogoutHandler} href="#">Logout</a>
+                <a className="dropdown-item" onClick={this.LogoutHandler} href="">Logout</a>
             </li>
             )
     }

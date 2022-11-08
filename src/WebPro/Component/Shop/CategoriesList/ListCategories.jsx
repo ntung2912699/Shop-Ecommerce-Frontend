@@ -8,6 +8,14 @@ class ListCategories extends Component{
       }
       
       render() {
+        function hideMenu(){
+          const element = document.getElementById("mySidenav");
+          const btnmenu = document.getElementById("open-btn");
+          if(element){
+            element.classList.add("hide_menu");
+            btnmenu.classList.add("show_btn");
+          }
+        }
         const a = document.querySelectorAll(".list-cate li a");
         for (var i = 0, length = a.length; i < length; i++) {
           a[i].onclick = function() {
@@ -20,11 +28,11 @@ class ListCategories extends Component{
           return (
             <ul class="list-cate list-group list-group-flush list-category-scroll">
               <li class="list-group-item active">
-                  <Link to={`/shop/all-shop`}>Tất Cả <span class="badge bg-danger rounded-pill">all</span></Link>
+                  <Link onClick={hideMenu} to={`/shop/all-shop`}>Tất Cả <span class="badge bg-danger rounded-pill">all</span></Link>
                 </li>
               { this.props.categories.map(category => 
                <li class="list-group-item">
-                  <Link to={`${category.id}`}>{category.name} <span class="badge bg-danger rounded-pill">{category.count_product}</span></Link>
+                  <Link onClick={hideMenu} to={`${category.id}`}>{category.name} <span class="badge bg-danger rounded-pill">{category.count_product}</span></Link>
                 </li>
               )}
             </ul>

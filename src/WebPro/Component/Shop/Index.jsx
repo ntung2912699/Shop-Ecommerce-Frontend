@@ -36,8 +36,19 @@ class Shop extends React.Component{
 
     render(){
         if(!this.props.product){
+          function hideMenu(){
+            const element = document.getElementById("mySidenav");
+            const btnmenu = document.getElementById("open-btn");
+            if(element){
+              element.classList.add("hide_menu");
+              btnmenu.classList.add("show_btn");
+            }
+          }
+
           function openNav() {
-            document.getElementById("mySidenav").style.width = "55%";
+            const elem = document.getElementById("mySidenav");
+            elem.classList.remove("hide_menu");
+            elem.style.width = "55%";       
             document.getElementById("main").style.marginLeft = "55%";
             document.getElementById("open-btn").style.display = 'none';
           }
@@ -45,7 +56,9 @@ class Shop extends React.Component{
           function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
-            document.getElementById("open-btn").style.display = 'block';
+            const btn = document.getElementById("open-btn");
+            btn.style.display = 'block';
+            btn.classList.remove("show_btn");
           }
             return (
                 <>
@@ -84,7 +97,7 @@ class Shop extends React.Component{
                                     
                                             <div class="d-grid gap-2" style={{paddingTop: '1rem'}}>
                                               <button id="btn-filter" class="btn btn-danger btn-sm" disabled type="button">
-                                                <Link style={{color : '#fff'}} to={`fillter-price/${this.state.price_min}/${this.state.price_max}/${this.state.id_category}`}>
+                                                <Link style={{color : '#fff'}} onClick={hideMenu} to={`fillter-price/${this.state.price_min}/${this.state.price_max}/${this.state.id_category}`}>
                                                   <div className="text-center">Áp Dụng</div>
                                                 </Link>
                                               </button>

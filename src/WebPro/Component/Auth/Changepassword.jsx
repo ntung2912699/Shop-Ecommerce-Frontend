@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import domainApi from "../../../Config/ConfigDomainAPI";
 
 export default function ChangePassword() {
-  
+    window.scrollTo(0, 0)
     async function changPasswordHandler(event){
         event.preventDefault();
         const oldpassword = document.getElementById('oldpassword').value

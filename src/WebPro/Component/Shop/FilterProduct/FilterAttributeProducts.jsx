@@ -14,13 +14,19 @@ export default function FilterAttributeProducts(){
     
     useEffect(() => {
         const loader = document.getElementById('products-shop-loader');
+        const formData = new FormData();
         loader.style.display = 'block';
-        axios.post(`${domainApi}/api/filter-product`,
+        formData.append('price_min',min);
+        formData.append('price_max',max);
+        formData.append('id_category',id_category);
+        axios.post(`${domainApi}/api/filter-product`,formData,
         {
-            'price_min' : min,
-            'price_max' : max,
-            'id_category' : id_category
-        })
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            }
+          }
+        )
         .then(res => {
         const products = res.data;
         setItems({ products });

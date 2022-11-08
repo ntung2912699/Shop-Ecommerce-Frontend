@@ -8,42 +8,49 @@ class CheckAuth extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            profile : null,
-            checkAuth : null,
+
         }
       }
 
-      async componentDidMount(){
+    componentDidMount(){
         const token = window.localStorage.getItem('access_token');
         if (token) {
-            await axios.get(`${domainApi}/api/auth/user-profile`,
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                  }
+            axios.get(`${domainApi}/api/auth/check-login`,
+            { 
+                headers : {
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json',
+                'Authorization' : `Bearer ${token}`
+                }
             }).then(response => {
-            const profile = response.data;
-                this.setState({ profile : profile });
+            const isLogin = response.data;
+                this.setState({
+                    isLogin : isLogin 
+                });
             })
             .catch((error) => {
                 console.log(error);
                 if( error ){
-                    // localStorage.removeItem('access_token')
-                    // localStorage.removeItem('user_name')
-                    // localStorage.removeItem('email')
-                    // localStorage.removeItem('users_id')
+                    localStorage.removeItem('access_token')
+                    localStorage.removeItem('user_name')
+                    localStorage.removeItem('email')
+                    localStorage.removeItem('users_id')
                     this.setState({
-                        checkAuth : false,
+                        notLogin : true,
                     })
                 }
             })
         }
     }
     render(){
-       if(this.state.profile){
-        if (this.state.profile.name) {
+        function hideNav() {
+            const element = document.getElementById("navbarSupportedContent");
+            if(element){
+                element.classList.remove("show");
+            }
+        }
+       if(this.state.isLogin){
+            const name = window.localStorage.getItem('user_name')
             return(
                 <>
                 <li class="nav-item dropdown">
@@ -51,9 +58,9 @@ class CheckAuth extends React.Component{
                         Tài Khoản
                     </Link>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><Link to={`#`} class="dropdown-item">{this.state.profile.name}</Link></li>
-                        <li><Link to={`/admin`} class="dropdown-item">Admin Site</Link></li>
-                        <li><Link to={`/change-password`} class="dropdown-item">Đổi mật khẩu</Link></li>
+                        <li><Link to={`#`} onClick={hideNav} class="dropdown-item">{name}</Link></li>
+                        <li><Link to={`/admin`} onClick={hideNav} class="dropdown-item">Admin Site</Link></li>
+                        <li><Link to={`/change-password`} onClick={hideNav} class="dropdown-item">Đổi mật khẩu</Link></li>
                         <li><Logout/></li>
                     </ul>
                 </li>
@@ -62,23 +69,13 @@ class CheckAuth extends React.Component{
         }else{
             return(
                 <>
-                 <li class="nav-item">
-                    <Link class="nav-link" to={'/login'}>
-                        Tài Khoản
-                    </Link>
-                </li> 
+                    <li class="nav-item">
+                        <Link class="nav-link" onClick={hideNav} to={'/login'}>
+                            Tài Khoản
+                        </Link>
+                    </li> 
                 </>
             )
         }
-       }
-       return(
-        <>
-        <li class="nav-item">
-            <Link class="nav-link" to={'/login'}>
-                Tài Khoản
-            </Link>
-        </li> 
-        </>
-    )
     }
 }export default CheckAuth;

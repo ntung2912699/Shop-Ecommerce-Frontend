@@ -1,6 +1,5 @@
 import React from "react";
-import { Markup } from 'interweave';
-import { MDBListGroup, MDBListGroupItem } from 'mdb-react-ui-kit';
+import FormatPrice from "../../FormatData/FormatPrice";
 
 class CustomerReviewContent extends React.Component{
     constructor(props) {
@@ -8,6 +7,7 @@ class CustomerReviewContent extends React.Component{
     };
 
     render(){
+        
         if(this.props.data){
             return(
                 <>
@@ -18,12 +18,31 @@ class CustomerReviewContent extends React.Component{
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="flush-headingOne">
                                     <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                       <b> Mô tả sản phẩm</b>
+                                       <b> Mô Tả Sản Phẩm</b>
                                     </a>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <p>{this.props.data.short_description}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                    <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                       <b>Ước Tính Chi Phí Mua Xe Tại Hà Nội</b>
+                                    </a>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="collapseTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div className="text-left">
+                                            <ul>
+                                                <li>Phí Trước Bạ : </li>
+                                                <li>Phí Đường Bộ : </li>
+                                                <li>Phí Đổi Biển : </li>
+                                                <li>Tổng ước tính :  <b><FormatPrice price={this.props.data.price}/></b></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     </div>
                                 </div>
