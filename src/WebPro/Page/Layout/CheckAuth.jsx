@@ -7,24 +7,20 @@ import domainApi from "../../../Config/ConfigDomainAPI";
 class CheckAuth extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
+        this.state = {}
       }
 
     componentDidMount(){
         const token = window.localStorage.getItem('access_token');
         if (token) {
-            var config = {
-                method: 'get',
-                url: `${domainApi}/api/auth/check-login`,
-                headers: {
+            axios.get(`${domainApi}/api/auth/check-login`,
+            {
+                'headers': {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'Authorization': 'Bearer ' + token,
+                    'Authorization': 'Bearer ' + token
                 }
-              };
-            axios(config)
+            })
             .then(response => {
             const isLogin = response.data;
                 this.setState({
@@ -34,10 +30,10 @@ class CheckAuth extends React.Component{
             .catch((error) => {
                 console.log(error);
                 if( error ){
-                    // localStorage.removeItem('access_token')
-                    // localStorage.removeItem('user_name')
-                    // localStorage.removeItem('email')
-                    // localStorage.removeItem('users_id')
+                    localStorage.removeItem('access_token')
+                    localStorage.removeItem('user_name')
+                    localStorage.removeItem('email')
+                    localStorage.removeItem('users_id')
                     this.setState({
                         notLogin : true,
                     })

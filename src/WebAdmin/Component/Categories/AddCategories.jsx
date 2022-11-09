@@ -114,7 +114,7 @@ class AddCategories extends React.Component{
                         </div>
                         <div className="mb-3">
                             <label for="status" className="form-label">Trạng Thái</label>
-                            <input type="text" className="form-control" id="status" placeholder="" required/>
+                            <input type="text" className="form-control" defaultValue={'On'} id="status" placeholder="" required/>
                         </div>
                         <div className="d-grid gap-2">
                             <button className="btn btn-danger" type="submit">Thêm Danh Mục</button>
