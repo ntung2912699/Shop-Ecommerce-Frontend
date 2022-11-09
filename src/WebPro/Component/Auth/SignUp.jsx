@@ -139,10 +139,10 @@ export default function SignUn() {
                   <small id='password_confirm_message' className='message_validate' style={{color: 'red'}}></small>
                 </div>
                 <div className="d-grid">
-                  <button className="btn btn-primary btn-login text-uppercase fw-bold" type='submit'>Đăng Ký</button>
+                  <button className="btn btn-danger btn-login text-uppercase fw-bold" type='submit'>Đăng Ký</button>
                 </div>
-                <hr className="my-4"/>
-                <div className="d-grid mb-2">
+                {/* <hr className="my-4"/> */}
+                {/* <div className="d-grid mb-2">
                   <button className="btn btn-google btn-login text-uppercase fw-bold" type="submit">
                     <i className="fab fa-google me-2"></i> Sign in with Google
                   </button>
@@ -151,7 +151,7 @@ export default function SignUn() {
                   <button className="btn btn-facebook btn-login text-uppercase fw-bold" type="submit">
                     <i className="fab fa-facebook-f me-2"></i> Sign in with Facebook
                   </button>
-                </div>
+                </div> */}
                 <div className="form-check mb-3">
                   <div className="d-grid text-center">
                     <label className="form-check-label" style={{paddingTop: '2rem'}}>Bạn đã có tài khoản <Link to={'/login'} style={{color: '#0d6efd'}}>Đăng Nhập Ngay !</Link></label>

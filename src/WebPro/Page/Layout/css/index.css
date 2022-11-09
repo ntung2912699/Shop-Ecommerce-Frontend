@@ -2730,6 +2730,10 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 
+.pagination{
+  display: contents !important;
+}
+
 @media only screen and (max-width: 860px) {
   .has-search{
     width : 100% !important;
@@ -2744,10 +2748,8 @@ textarea.form-control-lg {
     display: none;
 } */
 
-  .pagination-wrapper{
-    position: relative;
-    font-size: 11px;
-    margin-left: 0 !important;
+  .pagination{
+    display: contents !important;
   }
 
   .nav-logo{

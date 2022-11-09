@@ -80,7 +80,7 @@ export default function ChangePassword() {
                       </div>
   
                       <div className="d-grid">
-                        <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Gửi</button>
+                        <button className="btn btn-danger btn-login text-uppercase fw-bold" type="submit">Gửi</button>
                       </div>
                     </form>
                   </div>

@@ -35,7 +35,7 @@ class PaginationComponent extends Component {
   render() {
     let { activePage, limit, totalRecords } = this.state;
     return (
-      <div className="pagination-wrapper" style={{ marginLeft: "30%" }}>
+      <div className="pagination-wrapper">
         <Pagination
           aria-label="Page navigation example"
           itemClass="page-item"
