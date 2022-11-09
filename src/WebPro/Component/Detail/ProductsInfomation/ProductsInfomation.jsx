@@ -21,7 +21,7 @@ class ProductsInfomation extends React.Component{
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Thông cơ bản</a>
-                                    <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Thông số kĩ thuật</a>
+                                    {/* <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Thông số kĩ thuật</a> */}
                                 </div>
                             </nav>
                                 <div class="tab-content" id="nav-tabContent">
@@ -46,7 +46,7 @@ class ProductsInfomation extends React.Component{
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                {/* <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                     <div className="fs-6 mb-5">
                                         <ul class="list-group list-group-flush" style={{paddingTop : '0.5rem'}}>
                                             <b>Kích thước/Trọng Lượng</b>
@@ -63,7 +63,7 @@ class ProductsInfomation extends React.Component{
                                             <li class="list-group-item">Dung tích xi lanh :</li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="fs-5 mb-5">

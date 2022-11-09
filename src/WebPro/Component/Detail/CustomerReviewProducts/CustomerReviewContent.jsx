@@ -37,10 +37,70 @@ class CustomerReviewContent extends React.Component{
                                     <div class="accordion-body">
                                         <div className="text-left">
                                             <ul>
-                                                <li>Phí Trước Bạ : </li>
-                                                <li>Phí Đường Bộ : </li>
-                                                <li>Phí Đổi Biển : </li>
-                                                <li>Tổng ước tính :  <b><FormatPrice price={this.props.data.price}/></b></li>
+                                            {
+                                                Object.keys(this.props.data.attribute).map((e, i)=>{
+                                                    if(e == "NĂM SẢN XUẤT"){
+                                                        const datenow = new Date();
+                                                        const year = datenow.getFullYear();
+                                                        const year_build = this.props.data.attribute[e].map((element, index) => {
+                                                                return element.value
+                                                            })
+                                                        const value = year - year_build[0]
+                                                        const price_new = parseInt(this.props.data.price) + 120000000
+                                                            if(value <= 1){
+                                                                const revalue = 90
+                                                                const resul_one = (price_new * revalue)/100
+                                                                const result =(2*resul_one)/100
+                                                                return <>
+                                                                <li>Tổng ước tính :  <h1 style={{'color' : '#dc3545'}}><FormatPrice price={parseInt(this.props.data.price)+result+1560000+500000}/></h1></li>
+                                                                <li>Phí Trước Bạ : <b><FormatPrice price={result}/></b> </li>
+                                                                </>
+                                                            }
+                                                            if(value > 1 && value <=3){
+                                                                const revalue = 70
+                                                                const resul_one = (price_new * revalue)/100
+                                                                const result =(2*resul_one)/100
+                                                                return <>
+                                                                <li>Tổng ước tính :  <h1 style={{'color' : '#dc3545'}}><FormatPrice price={parseInt(this.props.data.price)+result+1560000+500000}/></h1></li>
+                                                                <li>Phí Trước Bạ : <b><FormatPrice price={result}/></b> </li>
+                                                                </>
+                                                            }
+                                                            if(value > 3 && value <=6){
+                                                                const revalue = 50
+                                                                const resul_one = (price_new * revalue)/100
+                                                                const result =(2*resul_one)/100
+                                                                return <>
+                                                                <li>Tổng ước tính :  <h1 style={{'color' : '#dc3545'}}><FormatPrice price={parseInt(this.props.data.price)+result+1560000+500000}/></h1></li>
+                                                                <li>Phí Trước Bạ : <b><FormatPrice price={result}/></b> </li>
+                                                                </>
+                                                            }
+                                                            if(value > 6 && value <=10){
+                                                                const revalue = 30
+                                                                const resul_one = (price_new * revalue)/100
+                                                                const result =(2*resul_one)/100
+                                                                return <>
+                                                                <li>Tổng ước tính :  <h1 style={{'color' : '#dc3545'}}><FormatPrice price={parseInt(this.props.data.price)+result+1560000+500000}/></h1></li>
+                                                                <li>Phí Trước Bạ : <b><FormatPrice price={result}/></b> </li>
+                                                                </>
+                                                            }
+                                                            if(value > 10){
+                                                                const revalue = 20
+                                                                const resul_one = (price_new * revalue)/100
+                                                                const result =(2*resul_one)/100
+                                                                return <>
+                                                                <li>Tổng ước tính :  <h1 style={{'color' : '#dc3545'}}><FormatPrice price={parseInt(this.props.data.price)+result+1560000+500000}/></h1></li>
+                                                                <li>Phí Trước Bạ : <b><FormatPrice price={result}/></b> </li>
+                                                                </>
+                                                            }
+                                                        }else{
+                                                            <li>Phí Trước Bạ : không xác định </li>
+                                                        }
+                                                    })
+                                                }
+                                                <li>Phí Đường Bộ : <b><FormatPrice price={1560000}/></b></li>
+                                                <li>Phí Đổi Biển : <br/>- Cùng Tỉnh/TP : <b><FormatPrice price={500000}/></b><br/>
+                                               - Khác Tỉnh/TP : <b><FormatPrice price={20000000}/></b><br/>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -82,7 +142,7 @@ class CustomerReviewContent extends React.Component{
                                 <li>Bao check hãng hoặc kiểm tra tại gara quý khách chỉ định</li>
                                 <li>Bảo hành lên đến 12 tháng đối với những xe lướt dưới 3 năm</li>
                                 <li>An ninh, pháp lý đảm bảo, không tranh chấp, phạt nguội</li>
-                                <li>Auto Anh Tuấn sẽ có trách nhiệm nhận lại xe và hoàn trả đủ tiền cho quý khách nếu không đúng với cam kết</li>
+                                <li>Auto Smart sẽ có trách nhiệm nhận lại xe và hoàn trả đủ tiền cho quý khách nếu không đúng với cam kết</li>
                             </ul>
                         </div>
                     </div>
