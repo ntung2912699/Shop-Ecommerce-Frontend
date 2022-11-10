@@ -7,7 +7,7 @@ import {
 class Carousel extends React.Component{
     render(){
         return(
-            <MDBCarousel showIndicators showControls fade>
+            <MDBCarousel className="slider-home" showIndicators showControls fade>
                 <MDBCarouselItem
                     className='w-100 d-block'
                     style={{maxHeight : '22rem'}}
