@@ -32,7 +32,7 @@ class GalleryCarousel extends Component{
                                         </div>
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img src={this.props.images.product.thumbnail} className="zoom d-block w-100" alt='....'/>
+                                                <img src={this.props.images.product.thumbnail} className="zoom d-block w-100" alt='...'/>
                                             </div>
                                             {
                                                 arr.map((gallery, index)=>{

@@ -10,7 +10,7 @@ class AdminLayOut extends React.Component{
            <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" style={{minHeight: '3rem'}}>
             <div className="container">
                 <div className="col-md-12 text-center">
-                <img src="https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Free-Car-Logo-Design-Source-PNG-Transparent.png"
+                <img src="https://static.wixstatic.com/media/6f1180_ab3dc37dd898402d8e20a625a6a3bec2~mv2.png/v1/crop/x_0,y_309,w_3508,h_1402/fill/w_905,h_362,al_c,usm_0.66_1.00_0.01,enc_auto/autosmart%20logo%20stoke.png"
                         height="50"/>
                 </div>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">

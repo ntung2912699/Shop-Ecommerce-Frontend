@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import domainApi from "../../../Config/ConfigDomainAPI";
 
 export default function Login() {
-    window.scrollTo(0, 0)
     function validateHandler(){
       const validateEmail = (email) => {
         return email.match(
@@ -88,6 +87,7 @@ export default function Login() {
         })
       }
     }
+    window.scrollTo(0, 0)
     return (
       <section className="container">
             <div id='message-render'></div>

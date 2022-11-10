@@ -12,7 +12,7 @@ class Carousel extends React.Component{
                     className='w-100 d-block'
                     style={{maxHeight : '22rem'}}
                     itemId={1}
-                    src='https://i.ytimg.com/vi/JxloIoQRz8o/maxresdefault.jpg'
+                    src='https://car-valet.ie/wp-content/uploads/2021/07/bnpic.jpg'
                     alt='...'
                 >
                     <h5>AUTO SMART</h5>
@@ -23,7 +23,7 @@ class Carousel extends React.Component{
                     className='w-100 d-block'
                     style={{maxHeight : '22rem'}}
                     itemId={2}
-                    src='https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw1e8cc92f/images/PDP/vf8/img-top.jpg'
+                    src='https://lh4.googleusercontent.com/-t0lzSZgPzdE/UUvNt2W3UgI/AAAAAAAAGnQ/B2FrSFB7fzE/s1600/Anh-bia-oto-xe-hop-+(11).jpg'
                     alt='...'
                 >
                     <h5>AUTO SMART</h5>
@@ -34,7 +34,7 @@ class Carousel extends React.Component{
                     className='w-100 d-block'
                     style={{maxHeight : '22rem'}}
                     itemId={3}
-                    src='https://storage.googleapis.com/f1-cms/2020/12/95d3ef51-20201217_080524.jpg'
+                    src='https://lh4.googleusercontent.com/-YrtjY9_wc0g/UUvSXEYbKrI/AAAAAAAAGu8/EKEQ0icBHuw/s1600/Anh-bia-oto-xe-hop-+(63).jpg'
                     alt='...'
                 >
                     <h5>AUTO SMART</h5>

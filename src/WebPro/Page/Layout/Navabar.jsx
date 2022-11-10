@@ -25,7 +25,7 @@ class Navabar extends React.Component{
                     </button>
                     <Link class="navbar-brand nav-logo" to={'/'}>
                         <img className="logo-png"
-                        src="https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Free-Car-Logo-Design-Source-PNG-Transparent.png"
+                        src="https://static.wixstatic.com/media/6f1180_ab3dc37dd898402d8e20a625a6a3bec2~mv2.png/v1/crop/x_0,y_309,w_3508,h_1402/fill/w_905,h_362,al_c,usm_0.66_1.00_0.01,enc_auto/autosmart%20logo%20stoke.png"
                         height="50"
                         />
                     </Link>
