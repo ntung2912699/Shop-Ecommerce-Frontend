@@ -10,6 +10,12 @@
     left: 62%;
 }
 
+/* .result-search{
+  background-color: #fff !important;
+  border: #999999 solid 1px;
+  border-radius: 10px;
+} */
+
 .spinner-border-search{
   width: 2rem;
   height: 2rem;

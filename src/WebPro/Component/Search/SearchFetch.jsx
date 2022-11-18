@@ -30,7 +30,7 @@ export default function SeachFetch(){
         if(props.result.result){
             return props.result.result.map((element , index) => {
                 return (
-                    <Link id="RouterNavLink" key={index} onClick={hideNav} className="h6 text-decoration-none text-truncate" to={`/detail-product/${element.id}`}>
+                    <Link id="RouterNavLink" key={index} onClick={hideNav} className="item-search text-decoration-none text-truncate" to={`/detail-product/${element.id}`}>
                         <li className="list-group-item d-flex justify-content-between align-items-start row">
                             <div className="overflow-hidden col-4 col-md-2">
                                 <img className="img-fluid img-product-search" src={element.thumbnail} alt="" style={{'width':"4rem", 'height':"4rem"}}/>

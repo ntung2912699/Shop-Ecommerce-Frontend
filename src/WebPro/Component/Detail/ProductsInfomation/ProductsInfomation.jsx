@@ -21,12 +21,11 @@ class ProductsInfomation extends React.Component{
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Thông cơ bản</a>
-                                    {/* <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Thông số kĩ thuật</a> */}
                                 </div>
                             </nav>
                                 <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                    <table class="table table-striped">
+                                    <table class="table table-sm table-hover">
                                         <tbody>
                                         {
                                         Object.keys(this.props.info.product.attribute).map((e, i)=>{
@@ -46,24 +45,6 @@ class ProductsInfomation extends React.Component{
                                         </tbody>
                                     </table>
                                 </div>
-                                {/* <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <div className="fs-6 mb-5">
-                                        <ul class="list-group list-group-flush" style={{paddingTop : '0.5rem'}}>
-                                            <b>Kích thước/Trọng Lượng</b>
-                                            <li class="list-group-item">Dài x Rộng x Cao (mm) :</li>
-                                            <li class="list-group-item">Chiều dài cơ sở (mm) :</li>
-                                            <li class="list-group-item">Chiều rộng cơ sở trước/sau (mm) :</li>
-                                            <li class="list-group-item">Trọng lượng không tải (kg) :</li>
-                                            <li class="list-group-item">Dung tích bình nhiên liệu (lít) :</li>
-                                        </ul>
-                                        <ul class="list-group list-group-flush" style={{paddingTop : '0.5rem'}}>
-                                            <b>Động Cơ</b>
-                                            <li class="list-group-item">Động cơ :</li>
-                                            <li class="list-group-item">Kiểu động cơ :</li>
-                                            <li class="list-group-item">Dung tích xi lanh :</li>
-                                        </ul>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                         <div className="fs-5 mb-5">

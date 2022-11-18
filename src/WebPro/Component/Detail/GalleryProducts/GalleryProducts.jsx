@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import './css/carousel.css'
-class GalleryCarousel extends Component{
-    constructor(props) {
-        super(props);
-    }
 
+class GalleryCarousel extends Component{
     render(){
         if (this.props.images.product) {
-            const arr =  this.props.images.product.gallery.split('|'); 
-            function viewerGallery(){
-                const images = arr;
-                console.log(images);
-            }
+            const arr =  this.props.images.product.gallery.split('|');
             return (
                 <>
                     <div className="col-md-7">

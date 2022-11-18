@@ -5,3 +5,8 @@
     left: 45% !important;
     display: none;
 }
+
+.list-cate li.active {
+    background-color: #dc354654 !important;
+    border-color : #dc354654 !important;
+}
