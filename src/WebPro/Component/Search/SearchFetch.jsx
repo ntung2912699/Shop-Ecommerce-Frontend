@@ -13,7 +13,7 @@ export default function SeachFetch(){
         document.addEventListener("click", (e) => {
         const calendarBlock = document.querySelector(".dropstart");
         let modalResult = document.getElementById('content-result');
-        if (!calendarBlock.contains(e.target)) {
+        if (calendarBlock && !calendarBlock.contains(e.target)) {
             setItems([]);
             modalResult.style.display = 'none';
         }

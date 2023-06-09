@@ -23,7 +23,7 @@ class Introduce extends React.Component{
                         <div className="title text-center">
                             <h3>Smart Auto</h3>
                         </div>
-                        <p>Là đơn vị chuyên kinh doanh ô tô đã qua sử dụng, chính thức hoạt động từ năm 2007. Với thâm niên hàng chục năm trong nghề, Auto Anh Tuấn đã bán trên 4000 chiếc xe các loại, từ dòng xe thông dụng như Toyota, Hyundai, Kia,… đến những dòng xe cao cấp như Mercedes, Lexus, LandRover,…</p>
+                        <p>Là đơn vị chuyên kinh doanh ô tô đã qua sử dụng, chính thức hoạt động từ năm 2007. Với thâm niên hàng chục năm trong nghề, Auto Smart đã bán trên 4000 chiếc xe các loại, từ dòng xe thông dụng như Toyota, Hyundai, Kia,… đến những dòng xe cao cấp như Mercedes, Lexus, LandRover,…</p>
                         <p>Bên cạnh đó, để đảm bảo có những chiếc xe tốt nhất khi tới tay khách hàng, Smart Auto luôn đề ra những tiêu chuẩn khắt khe khi nhập xe về showroom. Những tiêu chí hàng đầu đó là:</p>
                         <ul>
                             <li>An ninh, pháp lý đảm bảm ( giấy tờ hợp lệ, không tranh chấp, phạt nguội,…)</li>
