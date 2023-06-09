@@ -92,8 +92,7 @@ class CustomerReviewContent extends React.Component{
                                                                 <li>Phí Trước Bạ : <b><FormatPrice price={result}/></b> </li>
                                                                 </>
                                                             }
-                                                        }else{
-                                                            <li>Phí Trước Bạ : không xác định </li>
+                                                            return <li>Phí Trước Bạ : không xác định </li>
                                                         }
                                                     })
                                                 }
